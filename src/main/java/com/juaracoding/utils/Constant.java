@@ -1,6 +1,6 @@
 package com.juaracoding.utils;
 
-public class Contants {
+public class Constant {
 
     public final static long TIMEOUT = 10;
 
