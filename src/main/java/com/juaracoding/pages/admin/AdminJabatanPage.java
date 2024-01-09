@@ -11,7 +11,7 @@ public class AdminJabatanPage {
         this.driver = driver;
     }
 
-    @FindBy(xpath = "//input[@id='search']")
+    @FindBy(id="search")
     private WebElement searchField;
 
     @FindBy(xpath = "//button[@type='submit']")
@@ -29,10 +29,10 @@ public class AdminJabatanPage {
     @FindBy(xpath = "//button[normalize-space()='Batal']")
     private WebElement batalButton;
 
-    @FindBy(xpath = "//*[@id='name']")
+    @FindBy(id="name")
     private WebElement nameField;
 
-    @FindBy(xpath = "//*[@id='level']")
+    @FindBy(id="level")
     private WebElement levelField;
 
     @FindBy(xpath = "/html/body/div[1]/div/div/div/div[1]/div/div/div/div[2]/div/table/tbody/tr[3]/td[3]/div/div/button") // TODO: TODO: CURRENT ROW: 3 change this to target row"
