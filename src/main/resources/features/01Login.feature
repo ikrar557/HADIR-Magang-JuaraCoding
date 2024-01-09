@@ -1,8 +1,12 @@
-Feature: User Login
+Feature: Login Admin/Staff
 
-  Scenario: User Login Valid
-    Given User enter admin login page
-    When User enter email
-    And User enter password
-    And User click login button
-    Then User login successful
+  Scenario: Input URL benar
+   Given  Input url Absen Hadir yang benar
+   When  Klik tombol enter pada keyboard
+   Then  Menampilkan halaman login
+
+   Scenario: Input valid Username dan Password
+    Given Input username yang terdaftar
+    When Input password yang terdaftar
+    And Klik tombol Sign In
+    Then Berhasil masuk ke halaman dashboard

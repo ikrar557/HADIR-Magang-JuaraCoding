@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import com.juaracoding.utils.Constant;
+import static com.juaracoding.utils.Constant.*;
 
 public class AdminLoginPage {
     private WebDriver driver;
@@ -14,24 +16,10 @@ public class AdminLoginPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(id = "email")
-    private WebElement email;
-
-    @FindBy(id = "password")
-    private WebElement password;
-
     @FindBy(css = ".MuiButton-root")
-    private WebElement loginButton;
+    private WebElement adminLoginButton;
 
-    public void setEmail(String email){
-        this.email.sendKeys(email);
-    }
-
-    public void setPassword(String password){
-        this.password.sendKeys(password);
-    }
-
-    public void clickLoginButton(){
-        loginButton.click();
+    public void clickAdminLoginButton(){
+        adminLoginButton.click();
     }
 }
