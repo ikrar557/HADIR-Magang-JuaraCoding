@@ -2,7 +2,8 @@ package com.juaracoding.utils;
 
 public enum TestCase {
 
-    T1("User Login With Blank Username");
+    T1("Input URL benar"),
+    T2("Input valid Username dan Password");
 
     private String testCaseName;
 
