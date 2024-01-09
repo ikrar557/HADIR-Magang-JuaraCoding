@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfe1e2bf-75d2-47c8-944c-56d1a42f606d" name="Changes" comment="">
+    <list default="true" id="cfe1e2bf-75d2-47c8-944c-56d1a42f606d" name="Changes" comment="ADD: Divisi page with basic cucumber, READ TODO">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Contants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/AdminLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/AdminLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/staff/StaffLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/staff/StaffLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminLoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/Hooks.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
@@ -33,12 +46,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="ikrar" />
-                    <option name="lastUsedInstant" value="1704549125" />
+                    <option name="branchName" value="add-login" />
+                    <option name="lastUsedInstant" value="1704802680" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1704549124" />
+                    <option name="lastUsedInstant" value="1704802588" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="ikrar" />
+                    <option name="lastUsedInstant" value="1704549125" />
                   </RecentBranch>
                 </list>
               </option>
@@ -59,9 +76,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2aa8zSuJm0LxKeWJRdE0GLMEcKp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -75,7 +92,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "ikrar",
+    "git-widget-placeholder": "add-login",
+    "last_opened_file_path": "C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/main/resources/features",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,13 +104,55 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ikrar\IdeaProjects\jc-magang-hadir-hrm\src\main\resources\features" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ikrar\IdeaProjects\jc-magang-hadir-hrm\src\main\resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.juaracoding.drivers.strategies" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="jc-magang-hadir-hrm" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="jc-magang-hadir-hrm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.juaracoding.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.juaracoding" />
+      <option name="MAIN_CLASS_NAME" value="com.juaracoding.TestRunner" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="TestNG.C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SeleniumInternalSettingsState">
     <option name="lastFrameworkName" value="FluentLenium" />
     <option name="lastLanguageId" value="JAVA" />
+    <option name="lastUrl" value="https://www.google.com/" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -102,22 +162,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1704545592807</updated>
-      <workItem from="1704545593985" duration="3744000" />
+      <workItem from="1704545593985" duration="7817000" />
+      <workItem from="1704714777339" duration="3274000" />
+      <workItem from="1704757296780" duration="8148000" />
+      <workItem from="1704811781286" duration="1703000" />
     </task>
+    <task id="LOCAL-00001" summary="ADD: Divisi page with basic cucumber, READ TODO">
+      <option name="closed" value="true" />
+      <created>1704764765308</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704764765308</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/juaracoding/Main.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ADD: Divisi page with basic cucumber, READ TODO" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD: Divisi page with basic cucumber, READ TODO" />
   </component>
 </project>

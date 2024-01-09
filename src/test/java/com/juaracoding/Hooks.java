@@ -13,9 +13,9 @@ import java.io.IOException;
 
 public class Hooks {
 
-    static WebDriver driver;
+    public static WebDriver driver;
 
-    static ExtentTest extentTest;
+    public static ExtentTest extentTest;
 
     static ExtentReports reports = new ExtentReports("target/extent-report.html");
 
