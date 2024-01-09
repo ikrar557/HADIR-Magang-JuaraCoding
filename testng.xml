@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/admin/AdminLoginTest.java">
+        <classes>
+            <class name="TestNG.admin.AdminLoginTest">
+                <methods>
+                    <include name="testValidLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/admin/AdminDashboardTest.java">
+        <classes>
+            <class name="TestNG.admin.AdminDashboardTest">
+                <methods>
+                    <include name="testNavigateToManagementMenu"/>
+                    <include name="testNavigateToDivisiMenu"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/admin/DivisiTest.java">
+        <classes>
+            <class name="TestNG.admin.DivisiTest">
+                <methods>
+                    <include name="testAddNewDivision"/>
+                    <include name="testCancelAddNewDivision"/>
+                    <include name="testSearchValidDivision"/>
+                    <include name="testResetSearch"/>
+                    <include name="testSearchInvalidDivision"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
