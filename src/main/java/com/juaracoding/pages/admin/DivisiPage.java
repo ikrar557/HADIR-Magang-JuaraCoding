@@ -83,6 +83,9 @@ public class DivisiPage {
 
     // TODO: Add every element to validate the test
 
+    @FindBy(css = ".MuiSnackbarContent-message")
+    private WebElement popUpErrorAddNewDivision;
+
     public void clickAddNewDivisionButton(){
         addNewDivisionButton.click();
     }
@@ -163,7 +166,14 @@ public class DivisiPage {
 
     // TODO: Add getter to check if cancel when adding new division
     // TODO: Add getter to check if error more then 255 char
+    public String getErrorNewDivision(){
+        return popUpErrorAddNewDivision.getText();
+    }
+
     // TODO: Add getter to check if correct input
     // TODO: Add getter to check same new input
     // TODO: Add getter to check if the input is blank
+    public String getValidationMessage(){
+        return fieldNewDivisionName.getAttribute("validationMessage");
+    }
 }
