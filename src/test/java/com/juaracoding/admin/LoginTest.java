@@ -1,5 +1,6 @@
 package com.juaracoding.admin;
 
+import com.juaracoding.pages.GlobalElementPage;
 import com.juaracoding.pages.admin.AdminLoginPage;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -19,6 +20,7 @@ public class LoginTest {
     private static ExtentTest extentTest;
 
     private static AdminLoginPage adminLoginPage = new AdminLoginPage();
+    public static GlobalElementPage globalElementPage = new GlobalElementPage();
 
     public LoginTest(){
         driver = Hooks.driver;
@@ -34,19 +36,19 @@ public class LoginTest {
 
     @When("User enter email")
     public void user_enter_email(){
-        adminLoginPage.setEmail("admin@hadir.com");
+        globalElementPage.setEmail("admin@hadir.com");
         extentTest.log(LogStatus.PASS, "User enter email");
     }
 
     @And("User enter password")
     public void user_enter_password(){
-        adminLoginPage.setPassword("admin@hadir");
+        globalElementPage.setPassword("admin@hadir");
         extentTest.log(LogStatus.PASS, "User enter password");
     }
 
     @And("User click login button")
     public void user_click_login_button(){
-        adminLoginPage.clickLoginButton();
+        adminLoginPage.clickAdminLoginButton();
         extentTest.log(LogStatus.PASS, "User click login button");
     }
 

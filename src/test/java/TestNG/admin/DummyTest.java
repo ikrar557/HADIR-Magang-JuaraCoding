@@ -2,6 +2,7 @@ package TestNG.admin;
 
 import TestNG.TestBase;
 import com.juaracoding.drivers.DriverSingleton;
+import com.juaracoding.pages.GlobalElementPage;
 import com.juaracoding.pages.admin.AdminDashboardPage;
 import com.juaracoding.pages.admin.AdminLoginPage;
 import com.juaracoding.pages.admin.DivisiPage;
@@ -15,6 +16,7 @@ public class DummyTest extends TestBase {
     public AdminLoginPage adminLoginPage;
     public AdminDashboardPage adminDashboardPage;
 
+    public static GlobalElementPage globalElementPage = new GlobalElementPage();
 
     @BeforeClass
     public void testEnvironmentSetUP(){
@@ -32,9 +34,9 @@ public class DummyTest extends TestBase {
 
     @Test(priority = 1)
     public void testValidLogin(){
-        adminLoginPage.setEmail("admin@hadir.com");
-        adminLoginPage.setPassword("admin@hadir");
-        adminLoginPage.clickLoginButton();
+        globalElementPage.setEmail("admin@hadir.com");
+        globalElementPage.setPassword("admin@hadir");
+        adminLoginPage.clickAdminLoginButton();
         adminDashboardPage.clickManagementSideBar();
         adminDashboardPage.clickDivisiSideBar();
     }
