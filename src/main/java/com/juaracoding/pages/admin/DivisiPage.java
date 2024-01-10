@@ -1,10 +1,15 @@
 package com.juaracoding.pages.admin;
 
 import com.juaracoding.drivers.DriverSingleton;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class DivisiPage {
     private WebDriver driver;
@@ -23,7 +28,7 @@ public class DivisiPage {
     @FindBy(id = "name")
     private WebElement fieldNewDivisionName;
 
-    @FindBy (xpath = "(//button[@type='submit'])[2]")
+    @FindBy (css =".MuiButton-sizeMedium[type='submit']")
     private WebElement saveNewDivisionButton;
 
     @FindBy(id ="search")
@@ -40,7 +45,7 @@ public class DivisiPage {
     private WebElement iconButtonDeleteOrEditRow;
 
 //    Element appears once you click the icon 3 stack to edit or delete row
-    @FindBy(xpath="//li[contains(.,'Edit')]")
+    @FindBy(css=".MuiMenuItem-root[tabindex='0']")
     private WebElement editRowButton;
 
 //    Element appears when editing data
@@ -82,7 +87,8 @@ public class DivisiPage {
     private WebElement filterRowBy25;
 
     // TODO: Add every element to validate the test
-
+    @FindBy(className = "MuiTable-root")
+    private WebElement yourTable;
     @FindBy(css = ".MuiSnackbarContent-message")
     private WebElement popUpErrorAddNewDivision;
 
@@ -95,6 +101,7 @@ public class DivisiPage {
     }
 
     public void setDivisionName(String divisionName){
+        this.fieldNewDivisionName.clear();
         this.fieldNewDivisionName.sendKeys(divisionName);
     }
 
@@ -102,6 +109,7 @@ public class DivisiPage {
         saveNewDivisionButton.click();
     }
     public void setSearchName(String searchName){
+        this.search.clear();
         this.search.sendKeys(searchName);
     }
 
@@ -175,5 +183,33 @@ public class DivisiPage {
     // TODO: Add getter to check if the input is blank
     public String getValidationMessage(){
         return fieldNewDivisionName.getAttribute("validationMessage");
+    }
+
+    public String getTextFromTopmostRowFirstColumn() {
+        try {
+            String xpath = "//table[contains(@class, 'MuiTable-root')]/tbody/tr[1]/td[1]";
+            return yourTable.findElement(By.xpath(xpath)).getText();
+        } catch (NoSuchElementException e) {
+            return "";
+        } // TODO: Fix way to make it faster, the try catch waited for too long
+    }
+
+    public int getCountOfTextInFirstColumn(String searchText) {
+        try {
+            String xpath = "//table[contains(@class, 'MuiTable-root')]/tbody/tr/td[1]";
+            List<WebElement> firstColumnElements = yourTable.findElements(By.xpath(xpath));
+
+            int count = 0;
+            for (WebElement element : firstColumnElements) {
+                if (element.getText().equals(searchText)) {
+                    count++;
+                }
+            }
+
+            return count;
+        } catch (NoSuchElementException e) {
+            // Handle the case when the element is not found
+            return 0;
+        }
     }
 }

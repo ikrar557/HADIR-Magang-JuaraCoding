@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe1e2bf-75d2-47c8-944c-56d1a42f606d" name="Changes" comment="ADD: Divisi page with basic cucumber, READ TODO">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/AdminLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/AdminLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/staff/StaffLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/staff/StaffLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/Hooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/DivisiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/DivisiPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/DivisiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/DivisiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +40,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="add-login" />
-                    <option name="lastUsedInstant" value="1704802680" />
-                  </RecentBranch>
-                  <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1704802588" />
+                    <option name="lastUsedInstant" value="1704550360" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="ikrar" />
@@ -85,40 +75,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "add-login",
-    "last_opened_file_path": "C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/main/resources/features",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/main/java/com/juaracoding/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ikrar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/main/java/com/juaracoding/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Ikrar\IdeaProjects\jc-magang-hadir-hrm\src\main\resources\features" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Ikrar\IdeaProjects\jc-magang-hadir-hrm\src\main\resources" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.juaracoding.drivers.strategies" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.DummyTest">
     <configuration name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="jc-magang-hadir-hrm" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DummyTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="jc-magang-hadir-hrm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestNG.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestNG.admin" />
+      <option name="MAIN_CLASS_NAME" value="TestNG.admin.DummyTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -144,8 +144,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="TestNG.DummyTest" />
         <item itemvalue="TestNG.C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" />
+        <item itemvalue="TestNG.TestRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +166,7 @@
       <workItem from="1704545593985" duration="7817000" />
       <workItem from="1704714777339" duration="3274000" />
       <workItem from="1704757296780" duration="8148000" />
-      <workItem from="1704811781286" duration="1703000" />
+      <workItem from="1704782478802" duration="9170000" />
     </task>
     <task id="LOCAL-00001" summary="ADD: Divisi page with basic cucumber, READ TODO">
       <option name="closed" value="true" />
@@ -195,5 +196,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ADD: Divisi page with basic cucumber, READ TODO" />
     <option name="LAST_COMMIT_MESSAGE" value="ADD: Divisi page with basic cucumber, READ TODO" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/juaracoding/Main.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
