@@ -2,41 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/admin/AdminLoginTest.java">
-        <classes>
-            <class name="TestNG.admin.AdminLoginTest">
-                <methods>
-                    <include name="testValidLogin"/>
-                </methods>
-            </class>
-        </classes>
+          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/com/juaracoding/staff/StaffLoginTest.java">
+        <classes/>
     </test>
     <test verbose="2" preserve-order="true"
-          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/admin/AdminDashboardTest.java">
-        <classes>
-            <class name="TestNG.admin.AdminDashboardTest">
-                <methods>
-                    <include name="testNavigateToManagementMenu"/>
-                    <include name="testNavigateToDivisiMenu"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true"
-          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/admin/DivisiTest.java">
-        <classes>
-            <class name="TestNG.admin.DivisiTest">
-                <methods>
-                    <include name="testCancelAddNewDivision"/>
-                    <include name="testAdd255MoreChar"/>
-                    <include name="testAddNewDivision"/>
-                    <include name="testAddNewSameDivision"/>
-                    <include name="testAddNewBlankNameDivision"/>
-                    <include name="testSearchInvalidDivision"/>
-                    <include name="testResetSearch"/>
-                    <include name="testSearchValidDivision"/>
-                </methods>
-            </class>
-        </classes>
+          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/com/juaracoding/admin/AdminLoginTest.java">
+        <classes/>
     </test>
 </suite>
