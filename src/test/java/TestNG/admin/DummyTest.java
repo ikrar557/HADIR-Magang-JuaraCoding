@@ -6,30 +6,44 @@ import com.juaracoding.pages.GlobalElementPage;
 import com.juaracoding.pages.admin.AdminDashboardPage;
 import com.juaracoding.pages.admin.AdminLoginPage;
 import com.juaracoding.pages.admin.DivisiPage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import static com.juaracoding.utils.Constant.ADMIN_URL;
 
 public class DummyTest extends TestBase {
     public DivisiPage divisiPage;
     public AdminLoginPage adminLoginPage;
     public AdminDashboardPage adminDashboardPage;
 
-    public static GlobalElementPage globalElementPage = new GlobalElementPage();
+    public  GlobalElementPage globalElementPage;
 
     @BeforeClass
     public void testEnvironmentSetUP(){
         setUpChrome();
 
+        driver.get(ADMIN_URL);
+
         divisiPage = new DivisiPage();
         adminLoginPage = new AdminLoginPage();
         adminDashboardPage = new AdminDashboardPage();
+        globalElementPage = new GlobalElementPage();
     }
     @AfterClass
     public void finish(){
         DriverSingleton.delay(1);
         DriverSingleton.closeObjectInstance();
+    }
+
+    private void scrollPageToBottom() {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+        DriverSingleton.delay(1);
+
     }
 
     @Test(priority = 1)
@@ -41,44 +55,8 @@ public class DummyTest extends TestBase {
         adminDashboardPage.clickDivisiSideBar();
     }
 
-//    @Test(priority = 2)
-//    public void testAddNewSameDivision(){
-//        divisiPage.clickAddNewDivisionButton();
-//        divisiPage.setDivisionName("JC-SQA 12");
-//        divisiPage.clickSaveNewDivisionButton();
-//        DriverSingleton.delay(1);
-//        divisiPage.clickAddNewDivisionButton();
-//        divisiPage.setDivisionName("JC-SQA 12");
-//        divisiPage.clickSaveNewDivisionButton();
-//        DriverSingleton.delay(1);
-//        divisiPage.setSearchName("JC-SQA 12");
-//        divisiPage.clickSearchSubmitButton();
-//        DriverSingleton.delay(1);
-//        Assert.assertEquals(divisiPage.getCountOfTextInFirstColumn("JC-SQA 12"), 1);
-//    }
-
     @Test(priority = 3)
-    public void testCancelEditDivision(){
-        // Cancel Edit
-        divisiPage.setSearchName("JC-SQA 12");
-        divisiPage.clickSearchSubmitButton();
-        DriverSingleton.delay(1);
-        divisiPage.clickEditOrDeleteRowButton();
-        DriverSingleton.delay(1);
-        divisiPage.clickEditRowButton();
-        divisiPage.setDivisionName("JC-SQA Batch 12");
-        divisiPage.clickCancelDeleteOrEditButton();
-
-//        // Refresh the page
-//        DriverSingleton.getDriver().navigate().refresh();
-
-        // Valid edit
-        divisiPage.clickEditRowButton();
-        divisiPage.setDivisionName("JC-SQA Batch 12");
-        divisiPage.clickSaveEditDivisionButton();
-        DriverSingleton.delay(1);
+    public void testMovePage(){
+        System.out.println(divisiPage.getDivisiTitleText());
     }
-
-
-
 }

@@ -11,6 +11,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import static com.juaracoding.utils.Constant.ADMIN_URL;
 import static com.juaracoding.utils.Constant.STAFF_URL;
 
 public class LoginTest {
@@ -32,8 +33,8 @@ public class LoginTest {
     // #1 Scenario : Input URL Benar
     @Given("Input url Absen Hadir yang benar")
     public void input_url_absen_hadir_yang_benar() {
-        driver.get(STAFF_URL);
-        Assert.assertEquals(driver.getCurrentUrl(), STAFF_URL);
+        driver.get(ADMIN_URL);
+        Assert.assertEquals(driver.getCurrentUrl(), ADMIN_URL);
         extentTest.log(LogStatus.PASS, "Input url Absen Hadir yang benar");
     }
 
@@ -51,13 +52,13 @@ public class LoginTest {
     // #2 Scenario : Input valid username dan password
     @Given("Input username yang terdaftar")
     public void input_username_yang_terdaftar(){
-        globalElementPage.setEmail("delehil399@wikfee.com");
+        globalElementPage.setEmail("admin@hadir.com");
         extentTest.log(LogStatus.PASS, "Input username yang terdaftar");
     }
 
     @When("Input password yang terdaftar")
     public void input_password_yang_terdaftar(){
-        globalElementPage.setPassword("r4ngk1ng");
+        globalElementPage.setPassword("admin@hadir");
         extentTest.log(LogStatus.PASS, "Input username yang terdaftar");
     }
 

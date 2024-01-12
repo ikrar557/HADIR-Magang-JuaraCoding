@@ -1,10 +1,7 @@
 package com.juaracoding.pages.admin;
 
 import com.juaracoding.drivers.DriverSingleton;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -18,6 +15,9 @@ public class DivisiPage {
         this.driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver, this);
     }
+
+    @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-1kei35f']")
+    private WebElement divisiTitlePage;
 
     @FindBy(css = ".button-add")
     private WebElement addNewDivisionButton;
@@ -36,9 +36,6 @@ public class DivisiPage {
 
     @FindBy(xpath="//button[@type='submit']")
     private WebElement searchSubmitButton;
-
-    @FindBy(css=".MuiButton-textWarning")
-    private WebElement resetSearchButton;
 
 //    Element to click the icon 3 stack to edit or delete row
     @FindBy(css=".MuiTableRow-root:nth-child(1) .feather")
@@ -63,30 +60,6 @@ public class DivisiPage {
     @FindBy(xpath="//div[2]/button[2]")
     private WebElement cancelEditOrDeleteButton;
 
-//   Section to add element for the icon arrow (move between page)
-    @FindBy(css = "[data-testid='KeyboardArrowRightIcon']")
-    private WebElement nextPageIcon;
-
-    @FindBy(css = "[data-testid='LastPageIcon']")
-    private WebElement lastPageIcon;
-
-    @FindBy(css = "[data-testid='KeyboardArrowLeftIcon']")
-    private WebElement beforePageIcon;
-
-    @FindBy(css = "[data-testid='FirstPageIcon']")
-    private WebElement firstPageIcon;
-
-//   Section to add element for filter the total rows per page
-    @FindBy(xpath="//li[contains(.,'5')]")
-    private WebElement filterRowBy5;
-
-    @FindBy(xpath="//li[contains(.,'10')]")
-    private WebElement filterRowBy10;
-
-    @FindBy(xpath="//li[contains(.,'25')]")
-    private WebElement filterRowBy25;
-
-    // TODO: Add every element to validate the test
     @FindBy(className = "MuiTable-root")
     private WebElement yourTable;
     @FindBy(css = ".MuiSnackbarContent-message")
@@ -117,10 +90,6 @@ public class DivisiPage {
         searchSubmitButton.click();
     }
 
-    public void clickResetSearchButton(){
-        resetSearchButton.click();
-    }
-
     public void clickEditOrDeleteRowButton(){
         iconButtonDeleteOrEditRow.click();
     }
@@ -145,44 +114,20 @@ public class DivisiPage {
         cancelEditOrDeleteButton.click();
     }
 
-    public void clickNextPageIcon(){
-        nextPageIcon.click();
-    }
-
-    public void clickLastPageIcon(){
-        lastPageIcon.click();
-    }
-
-    public void clickBeforePageIcon(){
-        beforePageIcon.click();
-    }
-
-    public void clickFirstPageIcon(){
-        firstPageIcon.click();
-    }
-
-    public void clickFilterRowBy5(){
-        filterRowBy5.click();
-    }
-
-    public void clickFilterRowBy10(){
-        filterRowBy10.click();
-    }
-    public void clickFilterRowBy25(){
-        filterRowBy25.click();
-    }
-
-    // TODO: Add getter to check if cancel when adding new division
-    // TODO: Add getter to check if error more then 255 char
     public String getErrorNewDivision(){
         return popUpErrorAddNewDivision.getText();
     }
 
-    // TODO: Add getter to check if correct input
-    // TODO: Add getter to check same new input
-    // TODO: Add getter to check if the input is blank
     public String getValidationMessage(){
         return fieldNewDivisionName.getAttribute("validationMessage");
+    }
+
+    public String getTextFromSearchButton(){
+        return search.getAttribute("value");
+    }
+
+    public String getDivisiTitleText(){
+        return divisiTitlePage.getText();
     }
 
     public String getTextFromTopmostRowFirstColumn() {
@@ -198,18 +143,32 @@ public class DivisiPage {
         try {
             String xpath = "//table[contains(@class, 'MuiTable-root')]/tbody/tr/td[1]";
             List<WebElement> firstColumnElements = yourTable.findElements(By.xpath(xpath));
-
             int count = 0;
             for (WebElement element : firstColumnElements) {
                 if (element.getText().equals(searchText)) {
                     count++;
                 }
             }
-
             return count;
         } catch (NoSuchElementException e) {
-            // Handle the case when the element is not found
             return 0;
         }
+    }
+
+    public int getCountOfRowsInFirstColumn() {
+        try {
+            String xpath = "//table[contains(@class, 'MuiTable-root')]/tbody/tr/td[1]";
+            List<WebElement> firstColumnElements = yourTable.findElements(By.xpath(xpath));
+            return firstColumnElements.size();
+        } catch (NoSuchElementException e) {
+            return 0;
+        }
+    }
+
+    public void scrollPageToBottom() {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+        DriverSingleton.delay(1);
     }
 }
