@@ -1,17 +1,20 @@
 package com.juaracoding.pages.admin;
 
+import com.juaracoding.drivers.DriverSingleton;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class AdminJabatanPage {
     private WebDriver driver;
 
-    public AdminJabatanPage(WebDriver driver){
-        this.driver = driver;
+    public AdminJabatanPage(){
+        this.driver = DriverSingleton.getDriver();
+        PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//input[@id='search']")
+    @FindBy(id="search")
     private WebElement searchField;
 
     @FindBy(xpath = "//button[@type='submit']")
@@ -29,10 +32,10 @@ public class AdminJabatanPage {
     @FindBy(xpath = "//button[normalize-space()='Batal']")
     private WebElement batalButton;
 
-    @FindBy(xpath = "//*[@id='name']")
+    @FindBy(id="name")
     private WebElement nameField;
 
-    @FindBy(xpath = "//*[@id='level']")
+    @FindBy(id="level")
     private WebElement levelField;
 
     @FindBy(xpath = "/html/body/div[1]/div/div/div/div[1]/div/div/div/div[2]/div/table/tbody/tr[3]/td[3]/div/div/button") // TODO: TODO: CURRENT ROW: 3 change this to target row"
@@ -67,75 +70,75 @@ public class AdminJabatanPage {
 
 
 
-    private void inputSearchField(String search){
+    public void inputSearchField(String search){
         searchField.sendKeys(search);
     }
 
-    private void clickSearchButton(){
+    public void clickSearchButton(){
         searchButton.click();
     }
 
-    private void clickResetButton(){
+    public void clickResetButton(){
         resetButton.click();
     }
 
-    private void clickTambahkanButton(){
+    public void clickTambahkanButton(){
         tambahkanButton.click();
     }
 
-    private void clickSimpanButton(){
+    public void clickSimpanButton(){
         simpanButton.click();
     }
 
-    private void clickBatalButton(){
+    public void clickBatalButton(){
         batalButton.click();
     }
 
-    private void inputNameField(String name){
+    public void inputNameField(String name){
         nameField.sendKeys(name);
     }
 
-    private void inputLevelField(String level){
+    public void inputLevelField(String level){
         levelField.sendKeys(level);
     }
 
-    private void clickVerticalEllipsisButton(){
+    public void clickVerticalEllipsisButton(){
         verticalEllipsisButton.click();
     }
 
-    private void clickEditButton(){
+    public void clickEditButton(){
         editButton.click();
     }
 
-    private void clickDeleteButton(){
+    public void clickDeleteButton(){
         deleteButton.click();
     }
 
-    private void clickDeleteConfirmationButton(){
+    public void clickDeleteConfirmationButton(){
         deleteConfirmationButton.click();
     }
 
-    private void clickDeleteConfirmationCancelButton(){
+    public void clickDeleteConfirmationCancelButton(){
         deleteConfirmationCancelButton.click();
     }
 
-    private void clickRowPerPageDropdown(){
+    public void clickRowPerPageDropdown(){
         rowPerPageDropdown.click();
     }
 
-    private void clickFirstPageButton(){
+    public void clickFirstPageButton(){
         firstPageButton.click();
     }
 
-    private void clickLastPageButton(){
+    public void clickLastPageButton(){
         lastPageButton.click();
     }
 
-    private void clickPreviousPageButton(){
+    public void clickPreviousPageButton(){
         previousPageButton.click();
     }
 
-    private void clickNextPageButton(){
+    public void clickNextPageButton(){
         nextPageButton.click();
     }
 
