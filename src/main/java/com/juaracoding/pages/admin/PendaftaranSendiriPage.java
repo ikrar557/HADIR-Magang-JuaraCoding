@@ -14,7 +14,6 @@ public class PendaftaranSendiriPage {
         this.driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver, this);
     }
-
     //Management
     @FindBy(xpath = "//body/div[@id='__next']/div[@class='css-10f63sf']/div[@class='MuiBox-root css-k008qs']/div[@class='MuiDrawer-root MuiDrawer-docked css-1tu59u4']/div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft css-1yw4omu']/div[@data-simplebar='init']/div[@class='simplebar-wrapper']/div[@class='simplebar-mask']/div[@class='simplebar-offset']/div[@aria-label='scrollable content']/div[@class='simplebar-content']/div[@class='MuiBox-root css-10klw3m']/div[@class='sidebar MuiBox-root css-ftf74w']/div[@class='MuiBox-root css-old1by']/div[3]/div[1]/div[1]/div[1]/div[1]//*[name()='svg']//*[name()='path' and contains(@d,'M23.5501 8')]")
     private WebElement btnManagement;
@@ -87,7 +86,7 @@ public class PendaftaranSendiriPage {
     private WebElement jdwlCeklis;
     @FindBy(xpath = "//*[@id=\"mui-27\"]")
     private WebElement btnSubmit;
-    @FindBy(xpath = "//*[@id=\"__next\"]/div/div[2]/div/div[1]/div/div[2]/div[1]/div")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[1]/div/div[2]/div[1]/div/div[1]")
     private WebElement txtErrMessage;
     @FindBy(xpath = "//*[@id=\"alert-dialog-slide-title\"]/button")
     private WebElement tombolSilang;
@@ -170,9 +169,29 @@ public class PendaftaranSendiriPage {
     private WebElement submit;
     @FindBy(xpath = "//div[@class='MuiSnackbarContent-message css-1w0ym84']")
     private WebElement txtMessage;
-
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[3]/div/div[2]/div/div/div/div[1]")
+    private WebElement user;
+    @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-1kei35f']")
+    private WebElement txtUser;
     @FindBy(xpath = "//div[@class='MuiGrid-root MuiGrid-container css-1t9m8lh']")
     private WebElement testrefresh;
+    public String getValidMessageNik(){
+        return inputNik.getAttribute("validationMessage");
+    }
+    public String getValidMessageName(){
+        return inputNama.getAttribute("validationMessage");
+    }
+    public String getValidMessageEmail(){
+        return email.getAttribute("validationMessage");
+    }
+    public String getTxtBerhasil(){
+        return txtUser.getText();
+    }
+    public void setUser(){
+        DriverSingleton.delay(2);
+        user.click();
+        DriverSingleton.delay(2);
+    }
     public void setTestrefresh(){
         DriverSingleton.delay(2);
         driver.navigate().refresh();
@@ -204,26 +223,26 @@ public class PendaftaranSendiriPage {
     public void setNama(String userReg) {
         DriverSingleton.delay(2);
         nama.click();
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         this.cari.sendKeys(userReg);
         DriverSingleton.delay(2);
     }
     public void setNik(String userNik){
         DriverSingleton.delay(2);
         nik.click();
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         this.cari.sendKeys(userNik);
         DriverSingleton.delay(2);
     }
 
     public void setBtnCari() {
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         btnCari.click();
         DriverSingleton.delay(2);
     }
 
     public void setBtnResetCari() {
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         btnResetCari.click();
         DriverSingleton.delay(2);
     }
@@ -243,7 +262,7 @@ public class PendaftaranSendiriPage {
         DriverSingleton.delay(2);
     }
     public void isiIT(){
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         isiIT.click();
         DriverSingleton.delay(2);
     }
@@ -324,7 +343,7 @@ public class PendaftaranSendiriPage {
     }
     public void setUpFile(){
         DriverSingleton.delay(2);
-        upFile.sendKeys("C:\\Users\\DELL\\poto.jpeg");
+        upFile.sendKeys("C:\\Users\\DELL\\JC_Mayrista\\Hadir Pendaftaran Sendiri\\src\\test\\java\\upFile\\foto.jpeg");
         DriverSingleton.delay(2);
     }
     public void setHapusFoto(){
@@ -334,33 +353,33 @@ public class PendaftaranSendiriPage {
     }
     public void upFileDoc(){
         DriverSingleton.delay(2);
-        upFile.sendKeys("C:\\Users\\DELL\\Documents\\uipath.txt");
+        upFile.sendKeys("C:\\Users\\DELL\\JC_Mayrista\\Hadir Pendaftaran Sendiri\\src\\test\\java\\upFile\\doc.txt");
         DriverSingleton.delay(2);
     }
     public void inputNik(String inNik){
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         this.inputNik.sendKeys(Keys.CONTROL + "A");
         DriverSingleton.delay(2);
         this.inputNik.sendKeys(Keys.DELETE);
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         this.inputNik.sendKeys(inNik);
         DriverSingleton.delay(2);
     }
     public void inputNama(String inNama){
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         this.inputNama.sendKeys(Keys.CONTROL + "A");
         DriverSingleton.delay(2);
         this.inputNama.sendKeys(Keys.DELETE);
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         this.inputNama.sendKeys(inNama);
         DriverSingleton.delay(2);
     }
     public void email(String inputEmail){
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         this.email.sendKeys(Keys.CONTROL + "A");
         DriverSingleton.delay(2);
         this.email.sendKeys(Keys.DELETE);
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         this.email.sendKeys(inputEmail);
         DriverSingleton.delay(2);
     }
@@ -374,35 +393,35 @@ public class PendaftaranSendiriPage {
     public void pilihUnit(String units){
         DriverSingleton.delay(2);
         this.pilihUnit.sendKeys(units);
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         pUnit.click();
         DriverSingleton.delay(2);
     }
     public void pilihTipeKontrak(String tpKontrak){
         DriverSingleton.delay(2);
         this.pilihTipeKontrak.sendKeys(tpKontrak);
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         tipeKontrak.click();
         DriverSingleton.delay(2);
     }
     public void pilihPosisiKerja(String posisis){
         DriverSingleton.delay(2);
         this.pilihPosisiKerja.sendKeys(posisis);
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         posisiKerja.click();
         DriverSingleton.delay(2);
     }
     public void pilihJabatan(String jabatn){
         DriverSingleton.delay(2);
         this.pilihJabatan.sendKeys(jabatn);
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         pJabatan.click();
         DriverSingleton.delay(2);
     }
     public void pilihAtasan(String atasan1){
         DriverSingleton.delay(2);
         this.pilihAtasan.sendKeys(atasan1);
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         atasan.click();
         DriverSingleton.delay(2);
     }
@@ -416,44 +435,44 @@ public class PendaftaranSendiriPage {
     public void pilihAtasan2(String atasanv2){
         DriverSingleton.delay(2);
         this.pilihAtasan2.sendKeys(atasanv2);
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         atasan2.click();
         DriverSingleton.delay(2);
     }
     public void pilihAtasan3(String atasanv3){
         DriverSingleton.delay(2);
         this.pilihAtasan3.sendKeys(atasanv3);
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         atasan3.click();
         DriverSingleton.delay(2);
     }
     public void pilihLokasiKerja(String locKerja){
         DriverSingleton.delay(2);
         this.pilihLokasiKerja.sendKeys(locKerja);
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         lokasiKerja.click();
         DriverSingleton.delay(2);
     }
     public void setPilihShift(){
         DriverSingleton.delay(2);
         pilihShift.click();
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         shift.click();
         DriverSingleton.delay(2);
     }
     public void setNonShift(){
         DriverSingleton.delay(2);
         pilihShift.click();
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         nonShift.click();
         DriverSingleton.delay(2);
     }
     public void pilihJadwalKerja(String Jdw){
-        DriverSingleton.delay(1);
+        DriverSingleton.delay(2);
         this.pilihJadwalKerja.sendKeys(Keys.CONTROL + "A");
-        DriverSingleton.delay(1);
+        DriverSingleton.delay(2);
         this.pilihJadwalKerja.sendKeys(Keys.DELETE);
-        DriverSingleton.delay(1);
+        DriverSingleton.delay(2);
         this.pilihJadwalKerja.sendKeys(Jdw);
         DriverSingleton.delay(2);
         jadwalKerja.click();
@@ -462,7 +481,7 @@ public class PendaftaranSendiriPage {
     public void setNonSelfie(){
         DriverSingleton.delay(2);
         pilihSelfie.click();
-        DriverSingleton.delay(3);
+        DriverSingleton.delay(2);
         nonSelfie.click();
         DriverSingleton.delay(2);
     }
@@ -578,5 +597,4 @@ public class PendaftaranSendiriPage {
         tombolSilang.click();
         DriverSingleton.delay(2);
     }
-
 }
