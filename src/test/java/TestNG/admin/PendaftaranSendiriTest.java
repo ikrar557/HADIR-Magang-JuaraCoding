@@ -1,7 +1,6 @@
 package TestNG.admin;
 
 import TestNG.TestBase;
-import com.juaracoding.drivers.DriverSingleton;
 import com.juaracoding.pages.GlobalElementPage;
 import com.juaracoding.pages.admin.AdminLoginPage;
 import com.juaracoding.pages.admin.PendaftaranSendiriPage;
@@ -40,7 +39,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setBtnPilihNikNama();
        pendaftaranSendiriPage.setNama("Aldi Sonic");
        pendaftaranSendiriPage.setBtnCari();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtDataUser(),"Data User Registrasi Mobile");
    }
    @Test(dependsOnMethods = "testSearchByName")
@@ -49,7 +47,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setBtnPilihNikNama();
        pendaftaranSendiriPage.setNik("TEST1234");
        pendaftaranSendiriPage.setBtnCari();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtDataUser(),"Data User Registrasi Mobile");
    }
    @Test(dependsOnMethods = "testSearchByNik")
@@ -58,7 +55,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setBtnPilihNikNama();
        pendaftaranSendiriPage.setNik("Aldi Sonic");
        pendaftaranSendiriPage.setBtnCari();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtDataUser(),"Data User Registrasi Mobile");
    }
    @Test(dependsOnMethods = "testNameByNik")
@@ -67,7 +63,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setBtnPilihNikNama();
        pendaftaranSendiriPage.setNama("D6192283");
        pendaftaranSendiriPage.setBtnCari();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtDataUser(),"Data User Registrasi Mobile");
    }
    @Test(dependsOnMethods = "testNikByName")
@@ -90,45 +85,38 @@ public class PendaftaranSendiriTest extends TestBase {
    public void testPage25(){
        pendaftaranSendiriPage.setDataPerhalaman();
        pendaftaranSendiriPage.setData25();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtDataUser(),"Data User Registrasi Mobile");
    }
    @Test(dependsOnMethods = "testPage25")
    public void testPage10(){
        pendaftaranSendiriPage.setDataPerhalaman();
        pendaftaranSendiriPage.setData10();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtDataUser(),"Data User Registrasi Mobile");
    }
    @Test(dependsOnMethods = "testPage10")
    public void testPage5(){
        pendaftaranSendiriPage.setDataPerhalaman();
        pendaftaranSendiriPage.setData5();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtDataUser(),"Data User Registrasi Mobile");
    }
    @Test(dependsOnMethods = "testPage5")
    public void testNextPage(){
        pendaftaranSendiriPage.setNextPage();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtDataUser(),"Data User Registrasi Mobile");
    }
    @Test(dependsOnMethods = "testNextPage")
    public void testPreviousPage(){
        pendaftaranSendiriPage.setPervPage();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtDataUser(),"Data User Registrasi Mobile");
    }
    @Test(dependsOnMethods = "testPreviousPage")
    public void testLastPage(){
        pendaftaranSendiriPage.setLastPage();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtDataUser(),"Data User Registrasi Mobile");
    }
    @Test(dependsOnMethods = "testLastPage")
    public void testFirstPage(){
        pendaftaranSendiriPage.setFirstPage();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtDataUser(),"Data User Registrasi Mobile");
    }
    @Test(dependsOnMethods = "testFirstPage")
@@ -167,7 +155,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setNonSelfie();
        pendaftaranSendiriPage.jumlahCuti(1);
        pendaftaranSendiriPage.btnSubmit();
-       DriverSingleton.delay(2);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtMessage(), "Foto tidak boleh kosong");
    }
    @Test(dependsOnMethods = "testUpdateHapusFoto")
@@ -191,7 +178,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setNonSelfie();
        pendaftaranSendiriPage.jumlahCuti(1);
        pendaftaranSendiriPage.btnSubmit();
-       DriverSingleton.delay(2);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtMessage(), "Foto tidak boleh kosong");
    }
    @Test(dependsOnMethods = "testFotoDoc")
@@ -202,7 +188,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.inputNik("");
        pendaftaranSendiriPage.setUpFile();
        pendaftaranSendiriPage.btnSubmit();
-       DriverSingleton.delay(2);
        Assert.assertEquals(pendaftaranSendiriPage.getValidMessageNik(),"Please fill out this field.");
    }
 
@@ -214,7 +199,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.inputNama("");
        pendaftaranSendiriPage.setUpFile();
        pendaftaranSendiriPage.btnSubmit();
-       DriverSingleton.delay(2);
        Assert.assertEquals(pendaftaranSendiriPage.getValidMessageName(),"Please fill out this field.");
    }
    @Test(dependsOnMethods = "testNullNama")
@@ -226,7 +210,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setUpFile();
        pendaftaranSendiriPage.email("");
        pendaftaranSendiriPage.btnSubmit();
-       DriverSingleton.delay(2);
        Assert.assertEquals(pendaftaranSendiriPage.getValidMessageEmail(),"Please fill out this field.");
    }
    @Test(dependsOnMethods = "testNullEmail")
@@ -237,7 +220,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setUpFile();
        pendaftaranSendiriPage.inputNik("a");
        pendaftaranSendiriPage.btnSubmit();
-       DriverSingleton.delay(2);
        Assert.assertEquals(pendaftaranSendiriPage.getValidMessageNik(),"Please lengthen this text to 2 characters or more (you are currently using 1 character).");
    }
    @Test(dependsOnMethods = "test1CharNik")
@@ -248,7 +230,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setUpFile();
        pendaftaranSendiriPage.inputNama("A");
        pendaftaranSendiriPage.btnSubmit();
-       DriverSingleton.delay(2);
        Assert.assertEquals(pendaftaranSendiriPage.getValidMessageName(),"Please lengthen this text to 2 characters or more (you are currently using 1 character).");
    }
    @Test(dependsOnMethods = "test1CharNama")
@@ -259,7 +240,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setUpFile();
        pendaftaranSendiriPage.email("test");
        pendaftaranSendiriPage.btnSubmit();
-       DriverSingleton.delay(2);
        Assert.assertEquals(pendaftaranSendiriPage.getValidMessageEmail(),"Please include an '@' in the email address. 'test' is missing an '@'.");
    }
 
@@ -283,7 +263,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setNonSelfie();
        pendaftaranSendiriPage.jumlahCuti(1);
        pendaftaranSendiriPage.btnSubmit();
-       DriverSingleton.delay(2);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtMessage(),"Terjadi kesalahan pada server");
    }
    @Test(dependsOnMethods = "testAtasanInvalid")
@@ -308,7 +287,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.jumlahCuti(1);
        pendaftaranSendiriPage.btnSubmit();
        pendaftaranSendiriPage.setUser();
-       DriverSingleton.delay(2);
        Assert.assertEquals(pendaftaranSendiriPage.getTxtBerhasil(),"User");
    }
    @Test(dependsOnMethods = "testInputValid")
@@ -325,7 +303,6 @@ public class PendaftaranSendiriTest extends TestBase {
        pendaftaranSendiriPage.setJdwlCeklis("Admin Warung Bukalapak");
        pendaftaranSendiriPage.setBtnSubmitCeklis();
        pendaftaranSendiriPage.setTombolSilang();
-       DriverSingleton.delay(3);
        Assert.assertEquals(pendaftaranSendiriPage.setTxtErrMessage(),"Gagal edit user");
    }
 }

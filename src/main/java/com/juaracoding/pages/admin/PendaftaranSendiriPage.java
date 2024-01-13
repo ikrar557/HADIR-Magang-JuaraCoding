@@ -176,15 +176,19 @@ public class PendaftaranSendiriPage {
     @FindBy(xpath = "//div[@class='MuiGrid-root MuiGrid-container css-1t9m8lh']")
     private WebElement testrefresh;
     public String getValidMessageNik(){
+        DriverSingleton.delay(2);
         return inputNik.getAttribute("validationMessage");
     }
     public String getValidMessageName(){
+        DriverSingleton.delay(2);
         return inputNama.getAttribute("validationMessage");
     }
     public String getValidMessageEmail(){
+        DriverSingleton.delay(2);
         return email.getAttribute("validationMessage");
     }
     public String getTxtBerhasil(){
+        DriverSingleton.delay(2);
         return txtUser.getText();
     }
     public void setUser(){
@@ -211,6 +215,7 @@ public class PendaftaranSendiriPage {
     }
 
     public String getTxtPendaftaran() {
+        DriverSingleton.delay(2);
         return txtPendaftaran.getText();
     }
 
@@ -272,6 +277,7 @@ public class PendaftaranSendiriPage {
         DriverSingleton.delay(2);
     }
     public String getTxtDataUser(){
+        DriverSingleton.delay(2);
         return txtDataUserReg.getText();
     }
     public void setDataPerhalaman(){
@@ -339,6 +345,7 @@ public class PendaftaranSendiriPage {
         DriverSingleton.delay(2);
     }
     public String getTxtEditData(){
+        DriverSingleton.delay(2);
         return txtEditData.getText();
     }
     public void setUpFile(){
@@ -499,6 +506,7 @@ public class PendaftaranSendiriPage {
     }
 
     public String getTxtMessage(){
+        DriverSingleton.delay(2);
         return txtMessage.getText();
     }
 
@@ -590,6 +598,7 @@ public class PendaftaranSendiriPage {
         DriverSingleton.delay(2);
     }
     public String setTxtErrMessage(){
+        DriverSingleton.delay(2);
         return txtErrMessage.getText();
     }
     public void setTombolSilang(){
