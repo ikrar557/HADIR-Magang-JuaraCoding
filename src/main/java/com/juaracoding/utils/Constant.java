@@ -18,6 +18,7 @@ public class Constant {
     public final static String STAFF_URL = "https://staging-hadir.ptkta.com/absen/login";
 
     public final static String ADMIN_URL = "https://staging-hadir.ptkta.com/dashboards/dashboard";
+    public final static String JABATAN_URL = "https://staging-hadir.ptkta.com/management/job-level";
 
     @FindBy(id = "email")
     public static WebElement email;
