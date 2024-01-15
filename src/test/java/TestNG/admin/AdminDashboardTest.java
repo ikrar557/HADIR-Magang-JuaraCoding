@@ -17,9 +17,14 @@ public class AdminDashboardTest{
         adminDashboardPage.clickManagementSideBar();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, enabled = true)
     public void testNavigateToDivisiMenu(){
         adminDashboardPage.clickDivisiSideBar();
+    }
+
+    @Test(priority = 3, enabled = true)
+    public void testNavigateToUnitMenu(){
+        adminDashboardPage.clickUnitSideBar();
     }
 
 }

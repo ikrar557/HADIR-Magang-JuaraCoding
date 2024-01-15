@@ -21,12 +21,19 @@ public class AdminDashboardPage {
     @FindBy(xpath = "//p[.='Divisi']")
     private WebElement divisiSideBar;
 
+    @FindBy(xpath = "//p[.='Unit']")
+    private WebElement unitSideBar;
+
     public void clickManagementSideBar(){
         managementSideBar.click();
     }
 
     public void clickDivisiSideBar(){
         divisiSideBar.click();
+    }
+
+    public void clickUnitSideBar(){
+        unitSideBar.click();
     }
 
 
