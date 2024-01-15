@@ -15,6 +15,10 @@ public class PendaftaranSendiriTest {
     private static ExtentTest extentTest;
     public static PendaftaranSendiriPage pendaftaranSendiriPage = new PendaftaranSendiriPage();
 
+    public PendaftaranSendiriTest() {
+        driver = Hooks.driver;
+        extentTest = Hooks.extentTest;
+    }
     @Given("Admin go to menu management")
     public void admin_go_to_menu_management(){
         pendaftaranSendiriPage.setBtnManagement();
