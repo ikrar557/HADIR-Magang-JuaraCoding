@@ -3,13 +3,9 @@ package TestNG.admin;
 import com.juaracoding.drivers.DriverSingleton;
 import com.juaracoding.pages.GlobalElementPage;
 import com.juaracoding.pages.admin.DivisiPage;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import javax.swing.plaf.PanelUI;
 
 import static TestNG.TestBase.driver;
 
@@ -26,70 +22,70 @@ public class DivisiTest{
 
     @Test(priority = 1)
     public void testCancelAddNewDivision(){
-        divisiPage.clickAddNewDivisionButton();
-        divisiPage.setDivisionName("JC-SQA 12");
-        divisiPage.clickCancelAddNewDivisionButton();
+        globalElementPage.clickAddNewItemButton();
+        globalElementPage.setNewItemName("JC-SQA 12");
+        globalElementPage.clickCancelAddNewItemButton();
         DriverSingleton.delay(1);
-        divisiPage.setSearchName("JC-SQA 12");
-        divisiPage.clickSearchSubmitButton();
+        globalElementPage.setSearchName("JC-SQA 12");
+        globalElementPage.clickSearchSubmitButton();
         DriverSingleton.delay(1);
 
-        Assert.assertEquals(divisiPage.getCountOfRowsInFirstColumn(), 0);
+        Assert.assertEquals(globalElementPage.getCountOfRowsInFirstColumn(), 0);
     }
 
     @Test(priority = 2)
     public void testAdd255MoreChar(){
-        divisiPage.clickAddNewDivisionButton();
-        divisiPage.setDivisionName("fpiicougncpztofjvzpkjlbsqexghfdeuykucvzewrlqhxbwfxvwojnbzzmwwzikhcyfansdedqcrxjdcxowntjyvgsboghzpkdjuonqfvcmhrjuqjighcsidaqbdtztywrjwfznjbpzjsosoxkgwxfjzjalrefiilkbrlambaevduzdeayescirtnozlxqyxvnstbvxjbnyuiaoqskpiksharedtubicqnqaltxhezjneipvvzcfoygfcznalqw");
-        divisiPage.clickSaveNewDivisionButton();
+        globalElementPage.clickAddNewItemButton();
+        globalElementPage.setNewItemName("fpiicougncpztofjvzpkjlbsqexghfdeuykucvzewrlqhxbwfxvwojnbzzmwwzikhcyfansdedqcrxjdcxowntjyvgsboghzpkdjuonqfvcmhrjuqjighcsidaqbdtztywrjwfznjbpzjsosoxkgwxfjzjalrefiilkbrlambaevduzdeayescirtnozlxqyxvnstbvxjbnyuiaoqskpiksharedtubicqnqaltxhezjneipvvzcfoygfcznalqw");
+        globalElementPage.clickSaveNewItemButton();
 
-        Assert.assertEquals(divisiPage.getErrorNewDivision(), "Gagal Menambahkan Divisi");
-        divisiPage.clickCancelDeleteOrEditButton();
+        Assert.assertEquals(globalElementPage.getErrorNewItem(), "Gagal Menambahkan Divisi");
+        globalElementPage.clickCancelDeleteOrEditButton();
     }
     @Test(priority = 3)
     public void testAddNewDivision(){
-        divisiPage.clickAddNewDivisionButton();
-        divisiPage.setDivisionName("JC-SQA 12");
-        divisiPage.clickSaveNewDivisionButton();
+        globalElementPage.clickAddNewItemButton();
+        globalElementPage.setNewItemName("JC-SQA 12");
+        globalElementPage.clickSaveNewItemButton();
         DriverSingleton.delay(1);
-        divisiPage.setSearchName("JC-SQA 12");
-        divisiPage.clickSearchSubmitButton();
+        globalElementPage.setSearchName("JC-SQA 12");
+        globalElementPage.clickSearchSubmitButton();
         DriverSingleton.delay(1);
 
-        Assert.assertEquals(divisiPage.getTextFromTopmostRowFirstColumn(), "JC-SQA 12");
+        Assert.assertEquals(globalElementPage.getTextFromTopmostRowFirstColumn(), "JC-SQA 12");
     }
 
     @Test(priority = 4)
     public void testAddNewSameDivision(){
-        divisiPage.clickAddNewDivisionButton();
-        divisiPage.setDivisionName("JC-SQA 12");
-        divisiPage.clickSaveNewDivisionButton();
+        globalElementPage.clickAddNewItemButton();
+        globalElementPage.setNewItemName("JC-SQA 12");
+        globalElementPage.clickSaveNewItemButton();
         DriverSingleton.delay(1);
-        divisiPage.setSearchName("JC-SQA 12");
-        divisiPage.clickSearchSubmitButton();
+        globalElementPage.setSearchName("JC-SQA 12");
+        globalElementPage.clickSearchSubmitButton();
         DriverSingleton.delay(1);
 
-        Assert.assertEquals(divisiPage.getCountOfTextInFirstColumn("JC-SQA 12"), 1);
+        Assert.assertEquals(globalElementPage.getCountOfTextInFirstColumn("JC-SQA 12"), 1);
     }
 
     @Test(priority = 5)
     public void testAddNewBlankNameDivision(){
-        divisiPage.clickAddNewDivisionButton();
-        divisiPage.setDivisionName("");
-        divisiPage.clickSaveNewDivisionButton();
+        globalElementPage.clickAddNewItemButton();
+        globalElementPage.setNewItemName("");
+        globalElementPage.clickSaveNewItemButton();
 
-        Assert.assertEquals(divisiPage.getValidationMessage(), "Please fill out this field.");
-        divisiPage.clickCancelAddNewDivisionButton();
+        Assert.assertEquals(globalElementPage.getValidationMessage(), "Please fill out this field.");
+        globalElementPage.clickCancelAddNewItemButton();
     }
 
     @Test(priority = 6)
     public void testSearchInvalidDivision(){
         DriverSingleton.delay(1);
-        divisiPage.setSearchName("Codingan");
-        divisiPage.clickSearchSubmitButton();
+        globalElementPage.setSearchName("Codingan");
+        globalElementPage.clickSearchSubmitButton();
         DriverSingleton.delay(1);
 
-        Assert.assertEquals(divisiPage.getCountOfRowsInFirstColumn(), 0);
+        Assert.assertEquals(globalElementPage.getCountOfRowsInFirstColumn(), 0);
     }
 
     @Test(priority = 7)
@@ -97,108 +93,107 @@ public class DivisiTest{
         globalElementPage.clickResetSearchButton();
         DriverSingleton.delay(1);
 
-        Assert.assertEquals(divisiPage.getTextFromSearchButton(), "");
+        Assert.assertEquals(globalElementPage.getTextFromSearchButton(), "");
     }
     @Test(priority = 8)
     public void testSearchValidDivision(){
         DriverSingleton.delay(1);
-        divisiPage.setSearchName("JC-SQA 12");
-        divisiPage.clickSearchSubmitButton();
+        globalElementPage.setSearchName("JC-SQA 12");
+        globalElementPage.clickSearchSubmitButton();
         DriverSingleton.delay(1);
 
-        Assert.assertEquals(divisiPage.getTextFromTopmostRowFirstColumn(), "JC-SQA 12");
+        Assert.assertEquals(globalElementPage.getTextFromTopmostRowFirstColumn(), "JC-SQA 12");
     }
 
     @Test(priority = 9)
     public void testCancelEditDivision(){
-        divisiPage.clickEditOrDeleteRowButton();
+        globalElementPage.clickEditOrDeleteRowButton();
         DriverSingleton.delay(1);
-        divisiPage.clickEditRowButton();
-        divisiPage.setDivisionName("JC-SQA Batch 12");
-        divisiPage.clickCancelDeleteOrEditButton();
+        globalElementPage.clickEditRowButton();
+        globalElementPage.setNewItemName("JC-SQA Batch 12");
+        globalElementPage.clickCancelDeleteOrEditButton();
 
-        Assert.assertEquals(divisiPage.getCountOfTextInFirstColumn("JC-SQA 12"), 2);
+        Assert.assertEquals(globalElementPage.getCountOfTextInFirstColumn("JC-SQA 12"), 2);
     }
 
     @Test(priority = 10)
     public void testEditDivision(){
-        divisiPage.clickEditRowButton();
+        globalElementPage.clickEditRowButton();
         DriverSingleton.delay(1);
-        divisiPage.setDivisionName("JC-SQA Batch 12");
+        globalElementPage.setNewItemName("JC-SQA Batch 12");
         DriverSingleton.delay(1);
-        divisiPage.clickSaveEditDivisionButton();
+        globalElementPage.clickSaveEditItemButton();
 
         driver.navigate().refresh();
-        divisiPage.setSearchName("JC-SQA Batch 12");
-        divisiPage.clickSearchSubmitButton();
+        globalElementPage.setSearchName("JC-SQA Batch 12");
+        globalElementPage.clickSearchSubmitButton();
         DriverSingleton.delay(1);
 
-        Assert.assertEquals(divisiPage.getCountOfTextInFirstColumn("JC-SQA Batch 12"), 1);
+        Assert.assertEquals(globalElementPage.getCountOfTextInFirstColumn("JC-SQA Batch 12"), 1);
     }
 
     @Test(priority = 11)
     public void testEditDivisionSameName(){
         globalElementPage.clickResetSearchButton();
         DriverSingleton.delay(1);
-        divisiPage.setSearchName("JC-SQA 12");
-        divisiPage.clickSearchSubmitButton();
+        globalElementPage.setSearchName("JC-SQA 12");
+        globalElementPage.clickSearchSubmitButton();
         DriverSingleton.delay(1);
-        divisiPage.clickEditOrDeleteRowButton();
+        globalElementPage.clickEditOrDeleteRowButton();
         DriverSingleton.delay(1);
-        divisiPage.clickEditRowButton();
-        divisiPage.setDivisionName("JC-SQA Batch 12");
+        globalElementPage.clickEditRowButton();
+        globalElementPage.setNewItemName("JC-SQA Batch 12");
         DriverSingleton.delay(1);
-        divisiPage.clickSaveEditDivisionButton();
+        globalElementPage.clickSaveEditItemButton();
 
         driver.navigate().refresh();
-        divisiPage.setSearchName("JC-SQA Batch 12");
+        globalElementPage.setSearchName("JC-SQA Batch 12");
+        globalElementPage.clickSearchSubmitButton();
+        DriverSingleton.delay(1);
 
         // TODO: INFO!, It return failed because it should be give warning when there's identical division name
-        Assert.assertEquals(divisiPage.getCountOfTextInFirstColumn("JC-SQA Batch 12"), 1);
+        Assert.assertEquals(globalElementPage.getCountOfTextInFirstColumn("JC-SQA Batch 12"), 1);
     }
 
     @Test(priority = 12)
     public void testCancelDeleteDivision(){
+        globalElementPage.clickEditOrDeleteRowButton();
+        DriverSingleton.delay(2);
+        globalElementPage.clickDeleteRowButton();
         DriverSingleton.delay(1);
-        divisiPage.setSearchName("JC-SQA Batch 12");
-        divisiPage.clickSearchSubmitButton();
-        DriverSingleton.delay(1);
-        divisiPage.clickEditOrDeleteRowButton();
-        divisiPage.clickDeleteRowButton();
-        DriverSingleton.delay(1);
-        divisiPage.clickCancelDeleteOrEditButton();
+        globalElementPage.clickCancelDeleteOrEditButton();
 
-        Assert.assertEquals(divisiPage.getCountOfTextInFirstColumn("JC-SQA Batch 12"), 2);
+        Assert.assertEquals(globalElementPage.getCountOfTextInFirstColumn("JC-SQA Batch 12"), 2);
     }
 
     @Test(priority = 13)
     public void testDeleteDivision(){
-        divisiPage.clickDeleteRowButton();
+        globalElementPage.clickDeleteRowButton();
         DriverSingleton.delay(1);
-        divisiPage.clickConfirmDeleteDivisionRow();
+        globalElementPage.clickConfirmDeleteItemRow();
         globalElementPage.clickResetSearchButton();
-        divisiPage.setSearchName("JC-SQA Batch 12");
-        divisiPage.clickSearchSubmitButton();
+        globalElementPage.setSearchName("JC-SQA Batch 12");
+        globalElementPage.clickSearchSubmitButton();
         DriverSingleton.delay(1);
 
-        Assert.assertEquals(divisiPage.getCountOfTextInFirstColumn("JC-SQA Batch 12"), 1);
+        Assert.assertEquals(globalElementPage.getCountOfTextInFirstColumn("JC-SQA Batch 12"), 1);
     }
 
     @Test(priority = 14)
     public void testFilterRowBy5(){
         globalElementPage.clickResetSearchButton();
-        divisiPage.scrollPageToBottom();
+        globalElementPage.scrollPageToBottom();
         globalElementPage.clickSelectFilterByRow();
         globalElementPage.clickFilterRowBy5();
-        DriverSingleton.delay(1);
-        Assert.assertEquals(divisiPage.getCountOfRowsInFirstColumn(), 5);
+        DriverSingleton.delay(2);
+        Assert.assertEquals(globalElementPage.getCountOfRowsInFirstColumn(), 5);
     }
     @Test(priority = 15)
     public void testFilterRowBy10(){
         globalElementPage.clickSelectFilterByRow();
         globalElementPage.clickFilterRowBy10();
         DriverSingleton.delay(1);
-        Assert.assertEquals(divisiPage.getCountOfRowsInFirstColumn(), 10);
+        Assert.assertEquals(globalElementPage.getCountOfRowsInFirstColumn(), 10);
     }
 
     @Test(priority = 16)
@@ -206,13 +201,13 @@ public class DivisiTest{
         globalElementPage.clickSelectFilterByRow();
         globalElementPage.clickFilterRowBy25();
         DriverSingleton.delay(1);
-        Assert.assertEquals(divisiPage.getCountOfRowsInFirstColumn(), 25);
+        Assert.assertEquals(globalElementPage.getCountOfRowsInFirstColumn(), 25);
     }
 
     @Test(priority = 17)
     public void testMoveToLastPage(){
         globalElementPage.clickResetSearchButton();
-        divisiPage.scrollPageToBottom();
+        globalElementPage.scrollPageToBottom();
         globalElementPage.clickSelectFilterByRow();
         globalElementPage.clickFilterRowBy5();
         DriverSingleton.delay(1);

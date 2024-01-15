@@ -57,6 +57,6 @@ public class DummyTest extends TestBase {
 
     @Test(priority = 3)
     public void testMovePage(){
-        System.out.println(divisiPage.getDivisiTitleText());
+        System.out.println(globalElementPage.getTitleText());
     }
 }

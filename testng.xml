@@ -17,36 +17,37 @@
             <class name="TestNG.admin.AdminDashboardTest">
                 <methods>
                     <include name="testNavigateToManagementMenu"/>
-                    <include name="testNavigateToDivisiMenu"/>
+<!--                    <include name="testNavigateToDivisiMenu"/>-->
+                    <include name="testNavigateToUnitMenu"/>
                 </methods>
             </class>
         </classes>
     </test>
     <test verbose="2" preserve-order="true"
-          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/admin/DivisiTest.java">
+          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/admin/UnitTest.java">
         <classes>
-            <class name="TestNG.admin.DivisiTest">
+            <class name="TestNG.admin.UnitTest">
                 <methods>
-                    <include name="testCancelAddNewDivision"/>
-                    <include name="testAdd255MoreChar"/>
-                    <include name="testAddNewDivision"/>
-                    <include name="testAddNewSameDivision"/>
-                    <include name="testAddNewBlankNameDivision"/>
-                    <include name="testSearchInvalidDivision"/>
-                    <include name="testResetSearch"/>
-                    <include name="testSearchValidDivision"/>
-                    <include name="testCancelEditDivision"/>
-                    <include name="testEditDivision"/>
-                    <include name="testEditDivisionSameName"/>
-                    <include name="testCancelDeleteDivision"/>
-                    <include name="testDeleteDivision"/>
-                    <include name="testFilterRowBy5"/>
-                    <include name="testFilterRowBy10"/>
-                    <include name="testFilterRowBy25"/>
-                    <include name="testMoveToLastPage"/>
-                    <include name="testMoveToFirstPage"/>
-                    <include name="testMoveToNextPage"/>
-                    <include name="testMoveToBeforePage"/>
+                    <include name="testCancelAddNewUnit"/>
+                    <include name="testAdd255MoreCharUnit"/>
+                    <include name="testAddNewUnit"/>
+                    <include name="testAddNewSameUnit"/>
+                    <include name="testAddNewBlankNameUnit"/>
+                    <include name="testSearchInvalidUnit"/>
+                    <include name="testResetSearchUnit"/>
+                    <include name="testSearchValidUnit"/>
+                    <include name="testCancelEditUnit"/>
+                    <include name="testEditUnit"/>
+                    <include name="testEditUnitSameName"/>
+                    <include name="testCancelDeleteUnit"/>
+                    <include name="testDeleteUnit"/>
+                    <include name="testFilterRowBy5Unit"/>
+                    <include name="testFilterRowBy10Unit"/>
+                    <include name="testFilterRowBy25Unit"/>
+                    <include name="testMoveToLastPageUnit"/>
+                    <include name="testMoveToFirstPageUnit"/>
+                    <include name="testMoveToNextPageUnit"/>
+                    <include name="testMoveToBeforePageUnit"/>
                 </methods>
             </class>
         </classes>

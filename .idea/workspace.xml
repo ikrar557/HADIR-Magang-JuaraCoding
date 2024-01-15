@@ -8,12 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/GlobalElementPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/GlobalElementPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/AdminDashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/AdminDashboardPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/DivisiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/DivisiPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/features/03Divisi.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/03Divisi.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/features/02Dashboard.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/02Dashboard.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminDashboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminDashboardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/DivisiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/DivisiTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/DummyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/DummyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DashboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DashboardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DivisiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DivisiTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
@@ -32,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="ikrar" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,12 +48,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1704550360" />
+                    <option name="branchName" value="UnitPage" />
+                    <option name="lastUsedInstant" value="1705115326" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="ikrar" />
-                    <option name="lastUsedInstant" value="1704549125" />
+                    <option name="lastUsedInstant" value="1705079818" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1705079689" />
                   </RecentBranch>
                 </list>
               </option>
@@ -89,7 +94,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ikrar&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;UnitPage&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -100,11 +105,15 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ikrar\IdeaProjects\jc-magang-hadir-hrm\src\main\java\com\juaracoding\utils" />
+      <recent name="C:\Users\Ikrar\IdeaProjects\jc-magang-hadir-hrm\src\main\resources\features" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.juaracoding.drivers.strategies" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestRunner">
+  <component name="RunManager" selected="TestNG.C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml">
     <configuration name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="jc-magang-hadir-hrm" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -195,9 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" />
         <item itemvalue="TestNG.TestRunner" />
         <item itemvalue="TestNG.DummyTest" />
-        <item itemvalue="TestNG.C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" />
+        <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="TestNG.DummyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -221,6 +232,7 @@
       <workItem from="1704974920630" duration="3618000" />
       <workItem from="1705046453649" duration="8234000" />
       <workItem from="1705068628815" duration="9331000" />
+      <workItem from="1705300836518" duration="15193000" />
     </task>
     <task id="LOCAL-00001" summary="ADD: Divisi page with basic cucumber, READ TODO">
       <option name="closed" value="true" />
@@ -237,11 +249,38 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
