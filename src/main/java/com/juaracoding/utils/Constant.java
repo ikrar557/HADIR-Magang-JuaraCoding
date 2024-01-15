@@ -28,6 +28,4 @@ public class Constant {
     @FindBy(css = ".MuiButton-root")
     public static WebElement adminLoginButton;
 
-
-
 }
