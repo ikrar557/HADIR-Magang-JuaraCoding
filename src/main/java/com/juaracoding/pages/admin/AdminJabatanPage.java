@@ -142,4 +142,12 @@ public class AdminJabatanPage {
         nextPageButton.click();
     }
 
+    public boolean isJabatanExist(String name){
+        return driver.getPageSource().contains(name);
+    }
+
+    public boolean isJabatanNotExist(String name){
+        return !driver.getPageSource().contains(name);
+    }
+
 }
