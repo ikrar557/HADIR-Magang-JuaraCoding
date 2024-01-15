@@ -1,4 +1,4 @@
-Feature: Pendaftaran
+Feature: Pendaftaran Sendiri
  #1
   Scenario: Menu Management Pendaftaran Sendiri
     Given Admin go to menu management
@@ -233,4 +233,3 @@ Feature: Pendaftaran
     And klik btn submit
     Then pemberitahuan edit
     And klik silang
-

@@ -288,7 +288,7 @@ public class PendaftaranSendiriTest {
     }
     @Then("pemberitahuan9")
     public void pemberitahuan9(){
-        Assert.assertEquals(pendaftaranSendiriPage.getTxtMessage(),"Berhasil edit user");
+        Assert.assertEquals(pendaftaranSendiriPage.getTxtBerhasil(),"User");
         extentTest.log(LogStatus.PASS,"pemberitahuan9");
     }
 
