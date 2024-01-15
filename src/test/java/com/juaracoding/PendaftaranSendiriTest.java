@@ -406,4 +406,5 @@ public class PendaftaranSendiriTest {
         pendaftaranSendiriPage.setTombolSilang();
         extentTest.log(LogStatus.PASS,"klik silang");
     }
+
 }
