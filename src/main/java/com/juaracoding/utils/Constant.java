@@ -17,7 +17,7 @@ public class Constant {
 
     public final static String STAFF_URL = "https://staging-hadir.ptkta.com/absen/login";
 
-    public final static String ADMIN_URL = "https://staging-hadir.ptkta.com/dashboards/dashboard";
+    public final static String ADMIN_URL = "https://staging-hadir.ptkta.com/authentication/login";
 
     @FindBy(id = "email")
     public static WebElement email;
@@ -27,7 +27,5 @@ public class Constant {
 
     @FindBy(css = ".MuiButton-root")
     public static WebElement adminLoginButton;
-
-
 
 }
