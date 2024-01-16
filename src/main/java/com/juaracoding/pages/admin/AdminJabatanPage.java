@@ -68,7 +68,8 @@ public class AdminJabatanPage {
     @FindBy(xpath = "//button[@title='Go to next page']")
     private WebElement nextPageButton;
 
-
+    @FindBy(css = ".MuiSnackbarContent-message")
+    private WebElement popUpNotification;
 
     public void inputSearchField(String search){
         searchField.sendKeys(search);
@@ -148,6 +149,10 @@ public class AdminJabatanPage {
 
     public boolean isJabatanNotExist(String name){
         return !driver.getPageSource().contains(name);
+    }
+
+    public String getPopUpContent() {
+        return popUpNotification.getText();
     }
 
 }

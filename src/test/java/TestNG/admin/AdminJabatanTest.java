@@ -17,24 +17,19 @@ import static com.juaracoding.utils.Constant.JABATAN_URL;
 
 public class AdminJabatanTest extends TestBase {
 
-    private AdminLogin adminLogin;
     GlobalElementPage globalElementPage;
     AdminJabatanPage adminJabatanPage;
     @BeforeClass
     public void testSetUpEnvironmentChrome(){
         setUpChrome();
         globalElementPage = new GlobalElementPage();
-        adminLogin = new AdminLogin(globalElementPage, driver, JABATAN_URL);
+        AdminLogin adminLogin = new AdminLogin(globalElementPage, driver, JABATAN_URL);
+        adminLogin.loginUser();
         adminJabatanPage = new AdminJabatanPage();
     }
 
-    @Test()
-    public void testValidLogin(){
-        adminLogin.loginUser();
-    }
-
     // search jabatan
-    @Test(dependsOnMethods = "testValidLogin")
+    @Test()
     public void testSearchJabatan(){
         adminJabatanPage.inputSearchField("99");
         adminJabatanPage.clickSearchButton();
