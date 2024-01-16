@@ -192,26 +192,26 @@ public class PendaftaranSendiriPage {
         return txtUser.getText();
     }
     public void setUser(){
-        DriverSingleton.delay(2);
+        DriverSingleton.delay(1);
         user.click();
-        DriverSingleton.delay(2);
+        DriverSingleton.delay(1);
     }
     public void setTestrefresh(){
-        DriverSingleton.delay(2);
+        DriverSingleton.delay(1);
         driver.navigate().refresh();
-        DriverSingleton.delay(2);
+        DriverSingleton.delay(1);
     }
 
     public void setBtnManagement() {
-        DriverSingleton.delay(2);
+        DriverSingleton.delay(1);
         btnManagement.click();
-        DriverSingleton.delay(2);
+        DriverSingleton.delay(1);
     }
 
     public void setBtnPendaftaran() {
-        DriverSingleton.delay(2);
+        DriverSingleton.delay(1);
         btnPendaftaran.click();
-        DriverSingleton.delay(2);
+        DriverSingleton.delay(1);
     }
 
     public String getTxtPendaftaran() {
@@ -350,7 +350,7 @@ public class PendaftaranSendiriPage {
     }
     public void setUpFile(){
         DriverSingleton.delay(2);
-        upFile.sendKeys("C:\\Users\\DELL\\JC_Mayrista\\Hadir Pendaftaran Sendiri\\src\\test\\java\\upFile\\foto.jpeg");
+        upFile.sendKeys(System.getProperty("user.dir") + "src/main/resources/upFile/foto.jpeg");
         DriverSingleton.delay(2);
     }
     public void setHapusFoto(){
@@ -360,7 +360,7 @@ public class PendaftaranSendiriPage {
     }
     public void upFileDoc(){
         DriverSingleton.delay(2);
-        upFile.sendKeys("C:\\Users\\DELL\\JC_Mayrista\\Hadir Pendaftaran Sendiri\\src\\test\\java\\upFile\\doc.txt");
+        upFile.sendKeys(System.getProperty("user.dir") + "src/main/resources/upFile/doc.txt");
         DriverSingleton.delay(2);
     }
     public void inputNik(String inNik){
