@@ -38,13 +38,13 @@ public class AdminJabatanPage {
     @FindBy(id="level")
     private WebElement levelField;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div/div/div[1]/div/div/div/div[2]/div/table/tbody/tr[3]/td[3]/div/div/button") // TODO: TODO: CURRENT ROW: 3 change this to target row"
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div[1]/div/div/div/div[2]/div/table/tbody/tr[1]/td[3]/div/div/button") // TODO: TODO: CURRENT ROW: 3 change this to target row"
     private WebElement verticalEllipsisButton;
 
-    @FindBy(xpath = "/html/body/div[4]/div[3]/ul/li[1]") // TODO: CURRENT ROW: 3 change this to target row
+    @FindBy(xpath = "//li[@tabindex='0']") // TODO: CURRENT ROW: 3 change this to target row
     private WebElement editButton;
 
-    @FindBy(xpath = "/html/body/div[4]/div[3]/ul/li[2]") // TODO: CURRENT ROW: 3 change this to target row
+    @FindBy(xpath = "//li[@tabindex='-1']") // TODO: CURRENT ROW: 3 change this to target row
     private WebElement deleteButton;
     
     @FindBy(xpath = "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-4075ia']")
@@ -153,6 +153,18 @@ public class AdminJabatanPage {
 
     public String getPopUpContent() {
         return popUpNotification.getText();
+    }
+
+    public boolean isPopUpVisible() {
+
+        boolean result;
+        try {
+            return popUpNotification.isDisplayed();
+        } catch (Exception e) {
+            System.out.printf(e.getMessage());
+        }
+
+        return false;
     }
 
 }

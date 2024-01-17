@@ -8,8 +8,7 @@ import com.juaracoding.pages.admin.AdminJabatanPage;
 import com.juaracoding.pages.admin.AdminLoginPage;
 import com.juaracoding.pages.staff.StaffLoginPage;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.Objects;
 
@@ -43,6 +42,41 @@ public class AdminJabatanTest extends TestBase {
         adminJabatanPage.clickResetButton();
         DriverSingleton.delay(1);
         Assert.assertEquals(driver.getCurrentUrl(), JABATAN_URL);
+    }
+
+    @Test(dependsOnMethods = "testResetSearchJabatan")
+    public void testAddJabatan() {
+        adminJabatanPage.clickTambahkanButton();
+        adminJabatanPage.inputNameField("Boss");
+        adminJabatanPage.inputLevelField("98");
+        adminJabatanPage.clickSimpanButton();
+
+        DriverSingleton.delay(1);
+        Assert.assertEquals(adminJabatanPage.getPopUpContent(), "Berhasil Menambahkan Job Level");
+    }
+    @Test(dependsOnMethods = "testAddJabatan")
+    public void testAddJabatanThenCancel() {
+        adminJabatanPage.clickTambahkanButton();
+        adminJabatanPage.inputNameField("Boss");
+        adminJabatanPage.inputLevelField("98");
+        adminJabatanPage.clickBatalButton();
+
+        Assert.assertFalse(adminJabatanPage.isPopUpVisible());
+    }
+    @Test(dependsOnMethods = "testAddJabatanThenCancel")
+    public void testDeleteJabatan() {
+        DriverSingleton.delay(1);
+        adminJabatanPage.inputSearchField("98");
+        adminJabatanPage.clickSearchButton();
+        DriverSingleton.delay(1);
+        adminJabatanPage.clickVerticalEllipsisButton();
+        DriverSingleton.delay(1);
+        adminJabatanPage.clickDeleteButton();
+        DriverSingleton.delay(1);
+        adminJabatanPage.clickDeleteConfirmationButton();
+
+        // TODO : FIX THIS, NEED TO BE EQUAL
+        Assert.assertEquals(adminJabatanPage.getPopUpContent(), "Berhasil Delete Jabatan");
     }
 
 }
