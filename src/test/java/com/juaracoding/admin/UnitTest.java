@@ -31,7 +31,7 @@ public class UnitTest {
 
     @And("Masukan nama unit baru")
     public void masuk_nama_unit_baru(){
-        globalElementPage.setNewItemName("SQA-RPA 12");
+        unitPage.setInputNewUnit("SQA-RPA 12");
         extentTest.log(LogStatus.PASS, "Masukan nama unit baru");
     }
 
@@ -46,11 +46,17 @@ public class UnitTest {
     }
 
     // 2# Scenario : Input unit baru dengan jumlah karakter lebih dari 255
-    @Then("Muncul pop-up \"Gagal menambahkan Departements\"")
-    public void muncul_pop_up_gagal_menambahkan_departements(){
-        Assert.assertEquals(globalElementPage.getErrorNewItem(), "Gagal Menambahkan Departements");
 
-        extentTest.log(LogStatus.PASS, "Muncul pop-up \"Gagal menambahkan Departements\"");
+    @And("Masukan random karakter lebih dari 255")
+    public void masukan_random_karakter_lebih_dari_255(){
+        unitPage.setInputNewUnit("fpiicougncpztofjvzpkjlbsqexghfdeuykucvzewrlqhxbwfxvwojnbzzmwwzikhcyfansdedqcrxjdcxowntjyvgsboghzpkdjuonqfvcmhrjuqjighcsidaqbdtztywrjwfznjbpzjsosoxkgwxfjzjalrefiilkbrlambaevduzdeayescirtnozlxqyxvnstbvxjbnyuiaoqskpiksharedtubicqnqaltxhezjneipvvzcfoygfcznalqw");
+        extentTest.log(LogStatus.PASS, "Masukan random karakter lebih dari 255");
+    }
+    @Then("Muncul pop-up \"Gagal menambahkan Unit\"")
+    public void muncul_pop_up_gagal_menambahkan_departements(){
+        Assert.assertEquals(globalElementPage.getErrorNewItem(), "Gagal Menambahkan Unit");
+
+        extentTest.log(LogStatus.PASS, "Muncul pop-up \"Gagal menambahkan Unit\"");
 
         globalElementPage.clickCancelDeleteOrEditButton();
 
@@ -80,11 +86,17 @@ public class UnitTest {
     }
 
     // 5# Scenario : Input unit dengan nama blank atau kosong
-    @Then("Unit gagal ditambahkan, muncul pop-up \"Please fill out the field\"")
-    public void unit_gagal_ditambahkan_muncul_pop_up_please_fill_out_the_field(){
-        Assert.assertEquals(globalElementPage.getValidationMessage(), "Please fill out this field.");
+    @And("Masukan nama unit kosong")
+    public void masukan_nama_unit_kosong(){
+        unitPage.setInputNewUnit("");
+        extentTest.log(LogStatus.PASS, "Masukan nama unit kosong");
+    }
 
-        extentTest.log(LogStatus.PASS, "Unit gagal ditambahkan, muncul pop-up \"Please fill out the field\"");
+    @Then("Unit gagal ditambahkan, muncul pop-up \"Nama unit tidak boleh kosong!.\"")
+    public void unit_gagal_ditambahkan_muncul_pop_up_nama_unit_tidak_boleh_kosong(){
+        Assert.assertEquals(unitPage.getBlankInputNewUnitMessage(), "Nama unit tidak boleh kosong!.");
+
+        extentTest.log(LogStatus.PASS, "Unit gagal ditambahkan, muncul pop-up \"Nama unit tidak boleh kosong!.\"");
         globalElementPage.clickCancelAddNewItemButton();
 
     }
@@ -146,7 +158,7 @@ public class UnitTest {
 
     @And("Rubah \"Nama Unit\" menjadi nama unit baru")
     public void rubah_nama_unit_menjadi_nama_unit_baru(){
-        globalElementPage.setNewItemName("SQA-RPA Benhil");
+        unitPage.setInputNewUnit("SQA-RPA Benhil");
         extentTest.log(LogStatus.PASS, "Rubah \"Nama Unit\" menjadi nama unit baru");
     }
 
@@ -205,6 +217,7 @@ public class UnitTest {
     // 13 Scenario : Delete unit yang sudah di tambahkan
     @Then("Unit baru berhasil dihapus dari daftar unit")
     public void unit_baru_berhasil_dihapus_dari_daftar_unit(){
+        driver.navigate().refresh();
         DriverSingleton.delay(1);
 
         Assert.assertEquals(globalElementPage.getCountOfTextInFirstColumn("SQA-RPA Benhil"), 1);
@@ -217,10 +230,40 @@ public class UnitTest {
     // 14 Scenario : Filter jumlah baris yang ditampilkan menjadi 5 baris pada setiap halaman (Done -> Divisi Feature)
     // 15 Scenario : Filter jumlah baris yang ditampilkan menjadi 10 baris pada setiap halaman (Done -> Divisi Feature)
     // 16 Scenario : Filter jumlah baris yang ditampilkan menjadi 25 baris pada setiap halaman (Done -> Divisi Feature)
-    // 17 Scenario : Pindah ke halaman selanjutnya
+    // 17 Scenario : Pindah ke halaman paling akhir
+    @Then("Berhasil pindah tabel unit ke halaman paling akhir")
+    public void Berhasil_pindah_table_unit_ke_halaman_paling_akhir(){
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "76-80 of 80");
+
+        extentTest.log(LogStatus.PASS, "Berhasil pindah tabel unit ke halaman paling akhir");
+    }
+
     // 18 Scenario : Pindah ke halaman sebelumnya
-    // 19 Scenario : Pindah ke halaman paling akhir
-    // 20 Scenario : Pindah ke halaman paling awal
+    @Then("Berhasil pindah tabel unit ke halaman sebelumnya")
+    public void Berhasil_pindah_table_unit_ke_halaman_sebelumnya(){
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "71-75 of 80");
+
+        extentTest.log(LogStatus.PASS, "Berhasil pindah tabel unit ke halaman sebelumnya");
+    }
+
+    // 19 Scenario : Pindah ke halaman paling awal
+
+    @Then("Berhasil pindah tabel unit ke halaman paling awal")
+    public void Berhasil_pindah_table_unit_ke_halaman_paling_awal() {
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "1-5 of 80");
+
+        extentTest.log(LogStatus.PASS, "Berhasil pindah tabel unit ke halaman paling awal");
+    }
+
+    // 20 Scenario : Pindah ke halaman selanjutnya
+
+    @Then("Berhasil pindah tabel unit ke halaman selanjutnya")
+    public void Berhasil_pindah_table_unit_ke_halaman_selanjutnya() {
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "6-10 of 80");
+
+        extentTest.log(LogStatus.PASS, "Berhasil pindah tabel divisi ke halaman selanjutnya");
+    }
+
 
 
 

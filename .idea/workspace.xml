@@ -5,17 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe1e2bf-75d2-47c8-944c-56d1a42f606d" name="Changes" comment="ADD: Login TestNG and CUCUMBER, please check TODO">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/GlobalElementPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/GlobalElementPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/AdminDashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/AdminDashboardPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/DivisiPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/DivisiPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/UnitPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/UnitPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/04Unit.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/04Unit.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/features/02Dashboard.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/02Dashboard.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminDashboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminDashboardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/features/03Divisi.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/03Divisi.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/DivisiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/DivisiTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/DummyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/DummyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/UnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/UnitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DashboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DashboardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DivisiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DivisiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/UnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/UnitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +26,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportTestResults" outputFolder="$USER_HOME$/Downloads" userTempatePath="" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -82,7 +86,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2aa8zSuJm0LxKeWJRdE0GLMEcKp" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -94,7 +100,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;UnitPage&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ikrar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -113,7 +119,7 @@
       <recent name="com.juaracoding.drivers.strategies" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml">
+  <component name="RunManager" selected="TestNG.TestRunner">
     <configuration name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="jc-magang-hadir-hrm" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -204,8 +210,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" />
         <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="TestNG.C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" />
         <item itemvalue="TestNG.DummyTest" />
         <item itemvalue="TestNG.TestRunner" />
         <item itemvalue="TestNG.DummyTest" />
@@ -233,6 +239,7 @@
       <workItem from="1705046453649" duration="8234000" />
       <workItem from="1705068628815" duration="9331000" />
       <workItem from="1705300836518" duration="15193000" />
+      <workItem from="1705475104446" duration="12146000" />
     </task>
     <task id="LOCAL-00001" summary="ADD: Divisi page with basic cucumber, READ TODO">
       <option name="closed" value="true" />

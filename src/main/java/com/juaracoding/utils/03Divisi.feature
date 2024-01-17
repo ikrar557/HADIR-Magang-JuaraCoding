@@ -6,6 +6,7 @@ Feature: Divisi Module
    And Masukan nama divisi baru
    And Klik tombol "Batal"
    Then Kembali ke daftar divisi, divisi baru batal di tambahkan
+
   #2
   Scenario: Input divisi baru dengan jumlah karakter lebih dari 255
    Given Masuk menu "Divisi"
@@ -13,6 +14,7 @@ Feature: Divisi Module
    And Masukan random karakter yang lebih dari 255
    And Klik tombol "Tambah"
    Then Muncul pop-up "Gagal menambahkan divisi"
+
   #3
   Scenario: Input divisi baru benar
    Given Masuk menu "Divisi"
@@ -20,6 +22,7 @@ Feature: Divisi Module
    And Masukan nama divisi baru
    And Klik tombol "Tambah"
    Then Divisi baru berhasil ditambahkan
+
   #4
   Scenario: Input divisi baru dengan nama yang sama
    Given Masuk menu "Divisi"
@@ -27,6 +30,7 @@ Feature: Divisi Module
    And Masukan nama divisi baru
    And Klik tombol "Tambah"
    Then Divisi baru gagal ditambahkan, divisi sudah tersedia
+
   #5
   Scenario: Input divisi dengan nama blank atau kosong
    Given Masuk menu "Divisi"
@@ -120,30 +124,31 @@ Feature: Divisi Module
    When Klik drop down di samping Rows per page
    And Klik "25"
    Then Jumlah baris yang ditampilkan adalah 25 baris
-#  TODO : Don't forget to add verification to check : Last Page, Next Page, First Page, Previous Page
-#  #17
-#  Scenario: Pindah ke halaman selanjutnya
-#   Given Scroll ke bawah halaman
-#   When Klik icon ">"
-#   Then Berhasil pindah ke halaman selanjutnya
-#
-#  #18
-#  Scenario: Pindah ke halaman sebelumnya
-#   Given Scroll ke bawah halaman
-#   When Klik icon "<"
-#   Then Berhasil pindah ke halaman sebelumnya
-#
-#  #19
-#  Scenario: Pindah ke halaman paling akhir
-#   Given Scroll ke bawah halaman
-#   When Klik icon ">|"
-#   Then Berhasil pindah ke halaman  paling akhir
-#
-#  #20
-#  Scenario: Pindah ke halaman paling awal
-#   Given Scroll ke bawah halaman
-#   When Klik icon "|<"
-#   Then Berhasil pindah ke halaman paling awal
+
+  #17
+ Scenario: Pindah ke halaman paling akhir
+  Given Scroll ke bawah halaman
+  When Klik icon halaman terakhir
+  Then Berhasil pindah tabel divisi ke halaman paling akhir
+
+  #18
+  Scenario: Pindah ke halaman sebelumnya
+   Given Scroll ke bawah halaman
+   When Klik icon halaman sebelumnya
+   Then Berhasil pindah tabel divisi ke halaman sebelumnya
+
+  #19
+ Scenario: Pindah ke halaman paling awal
+  Given Scroll ke bawah halaman
+  When Klik icon halaman paling awal
+  Then Berhasil pindah tabel divisi ke halaman paling awal
+
+  #20
+ Scenario: Pindah ke halaman selanjutnya
+  Given Scroll ke bawah halaman
+  When Klik icon halaman selanjutnya
+  Then Berhasil pindah tabel divisi ke halaman selanjutnya
+
 
 
 

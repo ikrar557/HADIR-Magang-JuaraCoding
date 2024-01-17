@@ -108,8 +108,9 @@ public class DivisiTest{
     @Test(priority = 9)
     public void testCancelEditDivision(){
         globalElementPage.clickEditOrDeleteRowButton();
-        DriverSingleton.delay(1);
+        DriverSingleton.delay(2);
         globalElementPage.clickEditRowButton();
+        DriverSingleton.delay(1);
         globalElementPage.setNewItemName("JC-SQA Batch 12");
         globalElementPage.clickCancelDeleteOrEditButton();
 
@@ -158,7 +159,7 @@ public class DivisiTest{
     @Test(priority = 12)
     public void testCancelDeleteDivision(){
         globalElementPage.clickEditOrDeleteRowButton();
-        DriverSingleton.delay(2);
+        DriverSingleton.delay(3);
         globalElementPage.clickDeleteRowButton();
         DriverSingleton.delay(1);
         globalElementPage.clickCancelDeleteOrEditButton();
@@ -213,23 +214,34 @@ public class DivisiTest{
         DriverSingleton.delay(1);
         globalElementPage.clickLastPageIcon();
         // TODO: Add assertion to check
+
+        DriverSingleton.delay(1);
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "21-25 of 25");
     }
+
     @Test(priority = 18)
-    public void testMoveToFirstPage(){
-        DriverSingleton.delay(1);
-        globalElementPage.clickFirstPageIcon();
-        // TODO: Add assertion to check
-    }
-    @Test(priority = 19)
-    public void testMoveToNextPage(){
-        DriverSingleton.delay(1);
-        globalElementPage.clickNextPageIcon();
-        // TODO: Add assertion to check
-    }
-    @Test(priority = 20)
     public void testMoveToBeforePage(){
-        DriverSingleton.delay(1);
         globalElementPage.clickBeforePageIcon();
         // TODO: Add assertion to check
+
+        DriverSingleton.delay(1);
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "11-15 of 25");
     }
+    @Test(priority = 19)
+    public void testMoveToFirstPage(){
+        globalElementPage.clickFirstPageIcon();
+        // TODO: Add assertion to check
+
+        DriverSingleton.delay(1);
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "1-5 of 25");
+    }
+    @Test(priority = 20)
+    public void testMoveToNextPage(){
+        globalElementPage.clickNextPageIcon();
+        // TODO: Add assertion to check
+
+        DriverSingleton.delay(1);
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "6-10 of 25");
+    }
+
 }

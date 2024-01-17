@@ -28,25 +28,25 @@ public class DashboardTest {
         extentTest.log(LogStatus.PASS, "User click management sidebar");
     }
 
-    @When("User click division sidebar")
-    public void user_click_division_sidebar(){
-        adminDashboardPage.clickDivisiSideBar();
-        extentTest.log(LogStatus.PASS, "User click division sidebar");
-    }
-
-    @Then("User success move to division menu")
-    public void user_success_move_to_division_menu(){
-        extentTest.log(LogStatus.PASS, "User success move to division menu");
-    }
-
-//    @When("User click unit sidebar")
-//    public void user_click_unit_sidebar(){
-//        adminDashboardPage.clickUnitSideBar();
-//        extentTest.log(LogStatus.PASS, "User click unit sidebar");
+//    @When("User click division sidebar")
+//    public void user_click_division_sidebar(){
+//        adminDashboardPage.clickDivisiSideBar();
+//        extentTest.log(LogStatus.PASS, "User click division sidebar");
 //    }
 //
-//    @Then("User success move to unit menu")
-//    public void user_success_move_to_unit_menu(){
-//        extentTest.log(LogStatus.PASS, "User success move to unit menu");
+//    @Then("User success move to division menu")
+//    public void user_success_move_to_division_menu(){
+//        extentTest.log(LogStatus.PASS, "User success move to division menu");
 //    }
+
+    @When("User click unit sidebar")
+    public void user_click_unit_sidebar(){
+        adminDashboardPage.clickUnitSideBar();
+        extentTest.log(LogStatus.PASS, "User click unit sidebar");
+    }
+
+    @Then("User success move to unit menu")
+    public void user_success_move_to_unit_menu(){
+        extentTest.log(LogStatus.PASS, "User success move to unit menu");
+    }
 }

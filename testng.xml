@@ -44,10 +44,10 @@
                     <include name="testFilterRowBy5Unit"/>
                     <include name="testFilterRowBy10Unit"/>
                     <include name="testFilterRowBy25Unit"/>
-                    <include name="testMoveToLastPageUnit"/>
-                    <include name="testMoveToFirstPageUnit"/>
-                    <include name="testMoveToNextPageUnit"/>
-                    <include name="testMoveToBeforePageUnit"/>
+                    <include name="testMoveToLastPage"/>
+                    <include name="testMoveToBeforePage"/>
+                    <include name="testMoveToFirstPage"/>
+                    <include name="testMoveToNextPage"/>
                 </methods>
             </class>
         </classes>

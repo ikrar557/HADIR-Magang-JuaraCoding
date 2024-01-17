@@ -11,9 +11,9 @@ Feature: Unit Module
   Scenario: Input unit baru dengan jumlah karakter lebih dari 255
     Given Masuk menu "Unit"
     When Klik tombol "Tambahkan"
-    And Masukan random karakter yang lebih dari 255
+    And Masukan random karakter lebih dari 255
     And Klik tombol "Tambah"
-    Then Muncul pop-up "Gagal menambahkan Departements"
+    Then Muncul pop-up "Gagal menambahkan Unit"
 
   #3
   Scenario: Input unit baru benar
@@ -35,9 +35,9 @@ Feature: Unit Module
   Scenario: Input unit dengan nama blank atau kosong
     Given Masuk menu "Unit"
     When Klik tombol "Tambahkan"
-    And Masukan input kosong
+    And Masukan nama unit kosong
     And Klik tombol "Tambah"
-    Then Unit gagal ditambahkan, muncul pop-up "Please fill out the field"
+    Then Unit gagal ditambahkan, muncul pop-up "Nama unit tidak boleh kosong!."
 
   #6
   Scenario: Cari unit dengan nama yang tidak ada pada list
@@ -126,27 +126,26 @@ Feature: Unit Module
     And Klik "25"
     Then Jumlah baris yang ditampilkan adalah 25 baris
 
-#  TODO : Don't forget to add verification to check : Last Page, Next Page, First Page, Previous Page
-#  #17
-#  Scenario: Pindah ke halaman selanjutnya
-#   Given Scroll ke bawah halaman
-#   When Klik icon ">"
-#   Then Berhasil pindah ke halaman selanjutnya
-#
-#  #18
-#  Scenario: Pindah ke halaman sebelumnya
-#   Given Scroll ke bawah halaman
-#   When Klik icon "<"
-#   Then Berhasil pindah ke halaman sebelumnya
-#
-#  #19
-#  Scenario: Pindah ke halaman paling akhir
-#   Given Scroll ke bawah halaman
-#   When Klik icon ">|"
-#   Then Berhasil pindah ke halaman  paling akhir
-#
-#  #20
-#  Scenario: Pindah ke halaman paling awal
-#   Given Scroll ke bawah halaman
-#   When Klik icon "|<"
-#   Then Berhasil pindah ke halaman paling awal
+  #17
+  Scenario: Pindah ke halaman paling akhir
+    Given Scroll ke bawah halaman
+    When Klik icon halaman terakhir
+    Then Berhasil pindah tabel unit ke halaman paling akhir
+
+  #18
+  Scenario: Pindah ke halaman sebelumnya
+    Given Scroll ke bawah halaman
+    When Klik icon halaman sebelumnya
+    Then Berhasil pindah tabel unit ke halaman sebelumnya
+
+  #19
+  Scenario: Pindah ke halaman paling awal
+    Given Scroll ke bawah halaman
+    When Klik icon halaman paling awal
+    Then Berhasil pindah tabel unit ke halaman paling awal
+
+  #20
+  Scenario: Pindah ke halaman selanjutnya
+    Given Scroll ke bawah halaman
+    When Klik icon halaman selanjutnya
+    Then Berhasil pindah tabel unit ke halaman selanjutnya

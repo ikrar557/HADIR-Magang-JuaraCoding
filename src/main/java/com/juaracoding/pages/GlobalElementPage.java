@@ -48,14 +48,14 @@ public class GlobalElementPage {
     public WebElement iconButtonDeleteOrEditRow;
 
     //    Element appears once you click the icon 3 stack to edit or delete row
-    @FindBy(css=".MuiMenuItem-root[tabindex='0']")
+    @FindBy(xpath="//div[@class='MuiPopover-root MuiMenu-root MuiModal-root css-1sucic7']//li[.='Edit']")
     public WebElement editRowButton;
 
     //    Element appears when editing data
     @FindBy(xpath="//button[contains(.,'Simpan')]")
     public WebElement saveEditButton;
 
-    @FindBy(xpath = "//li[contains(.,'Delete')]")
+    @FindBy(xpath = "//div[@class='MuiPopover-root MuiMenu-root MuiModal-root css-1sucic7']//li[.='Delete']")
     public WebElement deleteRowButton;
 
     @FindBy(xpath= "//button[contains(.,'Ya')]")
@@ -100,6 +100,10 @@ public class GlobalElementPage {
 
     @FindBy(css = ".MuiSnackbarContent-message")
     private WebElement popUpErrorAddNewItem;
+
+    // Element to fetch total displayed row after filter by 5
+    @FindBy(css =".MuiTablePagination-displayedRows")
+    private WebElement paginationDisplayedInfo;
 
     // List of functions
 
@@ -220,6 +224,11 @@ public class GlobalElementPage {
     }
     public void clickFilterRowBy25(){
         filterRowBy25.click();
+    }
+
+    // Global function to get the pagination displayed information
+    public String getPaginationDisplayedInformation(){
+        return paginationDisplayedInfo.getText();
     }
 
     public String getTextFromTopmostRowFirstColumn() {

@@ -22,7 +22,8 @@ public class UnitTest {
     @Test(priority = 1)
     public void testCancelAddNewUnit(){
         globalElementPage.clickAddNewItemButton();
-        globalElementPage.setNewItemName("SQA-RPA JC 12");
+        DriverSingleton.delay(1);
+        unitPage.setInputNewUnit("SQA-RPA JC 12");
         globalElementPage.clickCancelAddNewItemButton();
         DriverSingleton.delay(1);
         globalElementPage.setSearchName("SQA-RPA JC 12");
@@ -35,17 +36,17 @@ public class UnitTest {
     @Test(priority = 2)
     public void testAdd255MoreCharUnit(){
         globalElementPage.clickAddNewItemButton();
-        globalElementPage.setNewItemName("fpiicougncpztofjvzpkjlbsqexghfdeuykucvzewrlqhxbwfxvwojnbzzmwwzikhcyfansdedqcrxjdcxowntjyvgsboghzpkdjuonqfvcmhrjuqjighcsidaqbdtztywrjwfznjbpzjsosoxkgwxfjzjalrefiilkbrlambaevduzdeayescirtnozlxqyxvnstbvxjbnyuiaoqskpiksharedtubicqnqaltxhezjneipvvzcfoygfcznalqw");
+        unitPage.setInputNewUnit("fpiicougncpztofjvzpkjlbsqexghfdeuykucvzewrlqhxbwfxvwojnbzzmwwzikhcyfansdedqcrxjdcxowntjyvgsboghzpkdjuonqfvcmhrjuqjighcsidaqbdtztywrjwfznjbpzjsosoxkgwxfjzjalrefiilkbrlambaevduzdeayescirtnozlxqyxvnstbvxjbnyuiaoqskpiksharedtubicqnqaltxhezjneipvvzcfoygfcznalqw");
         globalElementPage.clickSaveNewItemButton();
 
-        Assert.assertEquals(globalElementPage.getErrorNewItem(), "Gagal Menambahkan Departements");
-        globalElementPage.clickCancelDeleteOrEditButton();
+        Assert.assertEquals(globalElementPage.getErrorNewItem(), "Gagal Menambahkan Unit");
+        globalElementPage.clickCancelAddNewItemButton();
     }
     @Test(priority = 3)
     public void testAddNewUnit(){
         globalElementPage.clickAddNewItemButton();
         DriverSingleton.delay(1);
-        globalElementPage.setNewItemName("SQA-RPA JC 12");
+        unitPage.setInputNewUnit("SQA-RPA JC 12");
         globalElementPage.clickSaveNewItemButton();
         DriverSingleton.delay(1);
         globalElementPage.setSearchName("SQA-RPA JC 12");
@@ -58,7 +59,7 @@ public class UnitTest {
     @Test(priority = 4)
     public void testAddNewSameUnit(){
         globalElementPage.clickAddNewItemButton();
-        globalElementPage.setNewItemName("SQA-RPA JC 12");
+        unitPage.setInputNewUnit("SQA-RPA JC 12");
         globalElementPage.clickSaveNewItemButton();
         DriverSingleton.delay(1);
         globalElementPage.setSearchName("SQA-RPA JC 12");
@@ -71,10 +72,11 @@ public class UnitTest {
     @Test(priority = 5)
     public void testAddNewBlankNameUnit(){
         globalElementPage.clickAddNewItemButton();
-        globalElementPage.setNewItemName("");
+        unitPage.setInputNewUnit("");
         globalElementPage.clickSaveNewItemButton();
 
-        Assert.assertEquals(globalElementPage.getValidationMessage(), "Please fill out this field.");
+        DriverSingleton.delay(1);
+        Assert.assertEquals(unitPage.getBlankInputNewUnitMessage(), "Nama unit tidak boleh kosong!.");
         globalElementPage.clickCancelAddNewItemButton();
     }
 
@@ -110,7 +112,7 @@ public class UnitTest {
         globalElementPage.clickEditOrDeleteRowButton();
         DriverSingleton.delay(1);
         globalElementPage.clickEditRowButton();
-        globalElementPage.setNewItemName("SQA-RPA JC Benhil");
+        unitPage.setInputNewUnit("SQA-RPA JC Benhil");
         globalElementPage.clickCancelDeleteOrEditButton();
 
         Assert.assertEquals(globalElementPage.getCountOfTextInFirstColumn("SQA-RPA JC 12"), 2);
@@ -121,7 +123,7 @@ public class UnitTest {
         DriverSingleton.delay(1);
         globalElementPage.clickEditRowButton();
         DriverSingleton.delay(1);
-        globalElementPage.setNewItemName("SQA-RPA JC Benhil");
+        unitPage.setInputNewUnit("SQA-RPA JC Benhil");
         DriverSingleton.delay(1);
         globalElementPage.clickSaveEditItemButton();
 
@@ -143,7 +145,7 @@ public class UnitTest {
         globalElementPage.clickEditOrDeleteRowButton();
         DriverSingleton.delay(1);
         globalElementPage.clickEditRowButton();
-        globalElementPage.setNewItemName("SQA-RPA JC Benhil");
+        unitPage.setInputNewUnit("SQA-RPA JC Benhil");
         DriverSingleton.delay(1);
         globalElementPage.clickSaveEditItemButton();
 
@@ -212,31 +214,37 @@ public class UnitTest {
     }
 
     @Test(priority = 17)
-    public void testMoveToLastPageUnit(){
+    public void testMoveToLastPage(){
         globalElementPage.clickResetSearchButton();
         globalElementPage.scrollPageToBottom();
         globalElementPage.clickSelectFilterByRow();
         globalElementPage.clickFilterRowBy5();
         DriverSingleton.delay(1);
         globalElementPage.clickLastPageIcon();
-        // TODO: Add assertion to check
-    }
-    @Test(priority = 18)
-    public void testMoveToFirstPageUnit(){
+
         DriverSingleton.delay(1);
-        globalElementPage.clickFirstPageIcon();
-        // TODO: Add assertion to check
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "76-80 of 80");
+    }
+
+    @Test(priority = 18)
+    public void testMoveToBeforePage(){
+        globalElementPage.clickBeforePageIcon();
+
+        DriverSingleton.delay(1);
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "71-75 of 80");
     }
     @Test(priority = 19)
-    public void testMoveToNextPageUnit(){
+    public void testMoveToFirstPage(){
+        globalElementPage.clickFirstPageIcon();
+
         DriverSingleton.delay(1);
-        globalElementPage.clickNextPageIcon();
-        // TODO: Add assertion to check
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "1-5 of 80");
     }
     @Test(priority = 20)
-    public void testMoveToBeforePageUnit(){
+    public void testMoveToNextPage(){
+        globalElementPage.clickNextPageIcon();
+
         DriverSingleton.delay(1);
-        globalElementPage.clickBeforePageIcon();
-        // TODO: Add assertion to check
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "6-10 of 80");
     }
 }

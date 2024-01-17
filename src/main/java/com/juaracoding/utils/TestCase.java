@@ -20,7 +20,11 @@ public enum TestCase {
     T16("Delete divisi yang sudah di tambahkan"),
     T17("Filter jumlah baris yang ditampilkan menjadi 5 baris pada setiap halaman"),
     T18("Filter jumlah baris yang ditampilkan menjadi 10 baris pada setiap halaman"),
-    T19("Filter jumlah baris yang ditampilkan menjadi 25 baris pada setiap halaman");
+    T19("Filter jumlah baris yang ditampilkan menjadi 25 baris pada setiap halaman"),
+    T20("Pindah ke halaman paling akhir"),
+    T21("Pindah ke halaman sebelumnya"),
+    T23("Pindah ke halaman paling awal"),
+    T24("Pindah ke halaman selanjutnya  ");
 
     private String testCaseName;
 

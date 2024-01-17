@@ -52,11 +52,36 @@ public class DummyTest extends TestBase {
         globalElementPage.setPassword("admin@hadir");
         adminLoginPage.clickAdminLoginButton();
         adminDashboardPage.clickManagementSideBar();
-        adminDashboardPage.clickDivisiSideBar();
+//        adminDashboardPage.clickDivisiSideBar();
+        adminDashboardPage.clickUnitSideBar();
     }
 
     @Test(priority = 3)
     public void testMovePage(){
-        System.out.println(globalElementPage.getTitleText());
+        globalElementPage.scrollPageToBottom();
+        globalElementPage.clickSelectFilterByRow();
+        DriverSingleton.delay(1);
+        globalElementPage.clickFilterRowBy5();
+        DriverSingleton.delay(1);
+
+
+
+        globalElementPage.clickLastPageIcon();
+        DriverSingleton.delay(1);
+        System.out.println(globalElementPage.getPaginationDisplayedInformation());
+
+        globalElementPage.clickBeforePageIcon();
+        DriverSingleton.delay(1);
+        System.out.println(globalElementPage.getPaginationDisplayedInformation());
+
+        globalElementPage.clickFirstPageIcon();
+        DriverSingleton.delay(1);
+        System.out.println(globalElementPage.getPaginationDisplayedInformation());
+
+        globalElementPage.clickNextPageIcon();
+        DriverSingleton.delay(2);
+        System.out.println(globalElementPage.getPaginationDisplayedInformation());
+
+
     }
 }

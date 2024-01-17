@@ -223,6 +223,7 @@ public class DivisiTest {
 
     @Then("Nama divisi lama ganti menjadi nama divisi baru")
     public void nama_divisi_lama_ganti_menjadi_nama_divisi_baru(){
+        driver.navigate().refresh();
         globalElementPage.clickResetSearchButton();
         DriverSingleton.delay(1);
         globalElementPage.setSearchName("JC-SQA Batch 12");
@@ -236,6 +237,7 @@ public class DivisiTest {
 //  #11 Scenario: Edit divisi yang sudah ditambahkan dengan nama yang sama
     @Then("Nama divisi lama gagal di ganti menjadi nama divisi baru karena nama sudah tersedia")
     public void nama_divisi_lama_gagal_di_ganti_menjadi_nama_divisi_baru_karena_nama_sudah_tersedia(){
+        driver.navigate().refresh();
         globalElementPage.clickResetSearchButton();
         DriverSingleton.delay(1);
         globalElementPage.setSearchName("JC-SQA Batch 12");
@@ -350,10 +352,70 @@ public class DivisiTest {
         Assert.assertEquals(globalElementPage.getCountOfRowsInFirstColumn(), 25);
         extentTest.log(LogStatus.PASS, "Jumlah baris yang ditampilkan adalah 25 baris");
     }
-    // 17 Scenario : Pindah ke halaman selanjutnya
-    // 18 Scenario : Pindah ke halaman sebelumnya
-    // 19 Scenario : Pindah ke halaman paling akhir
-    // 20 Scenario : Pindah ke halaman paling awal
+    // 17 Scenario : Pindah ke halaman paling akhir
+    @When("Klik icon halaman terakhir")
+    public void klik_icon_halaman_terakhir(){
+        globalElementPage.clickSelectFilterByRow();
+        globalElementPage.clickFilterRowBy5();
+        DriverSingleton.delay(1);
+        globalElementPage.clickLastPageIcon();
 
-    // TODO: Add verification to check : Last Page, Next Page, First Page, Previous Page
+        DriverSingleton.delay(1);
+        extentTest.log(LogStatus.PASS, "Klik icon halaman terakhir");
+    }
+
+    @Then("Berhasil pindah tabel divisi ke halaman paling akhir")
+    public void Berhasil_pindah_ke_halaman_paling_akhir(){
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "16-20 of 20");
+
+        extentTest.log(LogStatus.PASS, "Berhasil pindah tabel divisi ke halaman paling akhir");
+    }
+
+    // 18 Scenario : Pindah ke halaman sebelumnya
+    @When("Klik icon halaman sebelumnya")
+    public void klik_icon_halaman_sebelumnya(){
+        globalElementPage.clickBeforePageIcon();
+
+        DriverSingleton.delay(1);
+        extentTest.log(LogStatus.PASS, "Klik icon halaman sebelumnya");
+    }
+
+    @Then("Berhasil pindah tabel divisi ke halaman sebelumnya")
+    public void Berhasil_pindah_ke_halaman_sebelumnya(){
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "11-15 of 20");
+
+        extentTest.log(LogStatus.PASS, "Berhasil pindah tabel divisi ke halaman sebelumnya");
+    }
+
+    // 19 Scenario : Pindah ke halaman paling awal
+    @When("Klik icon halaman paling awal")
+    public void klik_icon_halaman_paling_awal(){
+        globalElementPage.clickFirstPageIcon();
+
+        DriverSingleton.delay(1);
+        extentTest.log(LogStatus.PASS, "Klik icon halaman paling awal");
+    }
+
+    @Then("Berhasil pindah tabel divisi ke halaman paling awal")
+    public void Berhasil_pindah_ke_halaman_paling_awal() {
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "1-5 of 20");
+
+        extentTest.log(LogStatus.PASS, "Berhasil pindah tabel divisi ke halaman paling awal");
+    }
+
+    // 20 Scenario : Pindah ke halaman selanjutnya
+    @When("Klik icon halaman selanjutnya")
+    public void klik_icon_halaman_selanjutnya(){
+        globalElementPage.clickNextPageIcon();
+
+        DriverSingleton.delay(1);
+        extentTest.log(LogStatus.PASS, "Klik icon halaman selanjutnya");
+    }
+
+    @Then("Berhasil pindah tabel divisi ke halaman selanjutnya")
+    public void Berhasil_pindah_ke_halaman_selanjutnya() {
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "6-10 of 20");
+
+        extentTest.log(LogStatus.PASS, "Berhasil pindah tabel divisi ke halaman selanjutnya");
+    }
 }
