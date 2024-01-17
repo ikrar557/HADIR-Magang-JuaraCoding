@@ -5,21 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe1e2bf-75d2-47c8-944c-56d1a42f606d" name="Changes" comment="ADD: Divisi page with basic cucumber, READ TODO">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminDashboardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/AdminLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/AdminLoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/staff/StaffLoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/staff/StaffLoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/TestBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminLoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminLoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/Hooks.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -76,6 +75,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -87,23 +89,35 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AdminDashboardTest.executor": "Run",
+    "JUnit.TestNG in jc-magang-hadir-hrm.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.AdminDashboardTest.executor": "Run",
+    "TestNG.AdminDashboardTest.loginAndVerifyDashboard.executor": "Debug",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "add-login",
-    "last_opened_file_path": "C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/main/resources/features",
+    "git-widget-placeholder": "Novi-YL",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/juaracoding/HADIR-Magang-JuaraCoding-master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/main/java/com/juaracoding/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="TestNG.admin" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Ikrar\IdeaProjects\jc-magang-hadir-hrm\src\main\resources\features" />
     </key>
@@ -114,11 +128,72 @@
       <recent name="com.juaracoding.drivers.strategies" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.AdminDashboardTest">
+    <configuration name="AdminDashboardTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestNG.admin.AdminDashboardTest" />
       <module name="jc-magang-hadir-hrm" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestNG.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestNG in jc-magang-hadir-hrm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jc-magang-hadir-hrm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestNG.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestNG" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminDashboardTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="jc-magang-hadir-hrm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestNG.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestNG.admin" />
+      <option name="MAIN_CLASS_NAME" value="TestNG.admin.AdminDashboardTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="jc-magang-hadir-hrm" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestNG.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="TestNG.admin" />
+      <option name="MAIN_CLASS_NAME" value="TestNG.admin.AdminLoginTest" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
@@ -144,15 +219,25 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.AdminDashboardTest" />
+        <item itemvalue="Application.AdminDashboardTest" />
+        <item itemvalue="JUnit.TestNG in jc-magang-hadir-hrm" />
+        <item itemvalue="TestNG.AdminLoginTest" />
         <item itemvalue="TestNG.TestRunner" />
-        <item itemvalue="TestNG.C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" />
       </list>
     </recent_temporary>
   </component>
   <component name="SeleniumInternalSettingsState">
-    <option name="lastFrameworkName" value="FluentLenium" />
+    <option name="lastFrameworkName" value="Selenium" />
     <option name="lastLanguageId" value="JAVA" />
-    <option name="lastUrl" value="https://www.google.com/" />
+    <option name="lastUrl" value="https://dev.dikahadir.com/dashboards/dashboard" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -166,6 +251,18 @@
       <workItem from="1704714777339" duration="3274000" />
       <workItem from="1704757296780" duration="8148000" />
       <workItem from="1704811781286" duration="1703000" />
+      <workItem from="1704894844659" duration="730000" />
+      <workItem from="1705068344276" duration="235000" />
+      <workItem from="1705306127917" duration="9443000" />
+      <workItem from="1705375723885" duration="5703000" />
+      <workItem from="1705385758598" duration="1822000" />
+      <workItem from="1705407431289" duration="2855000" />
+      <workItem from="1705478653058" duration="1278000" />
+      <workItem from="1705485113938" duration="683000" />
+      <workItem from="1705486032563" duration="1873000" />
+      <workItem from="1705488054585" duration="675000" />
+      <workItem from="1705490310372" duration="310000" />
+      <workItem from="1705491230447" duration="3414000" />
     </task>
     <task id="LOCAL-00001" summary="ADD: Divisi page with basic cucumber, READ TODO">
       <option name="closed" value="true" />
@@ -186,7 +283,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Novi-YL" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -195,5 +304,25 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ADD: Divisi page with basic cucumber, READ TODO" />
     <option name="LAST_COMMIT_MESSAGE" value="ADD: Divisi page with basic cucumber, READ TODO" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/TestNG/admin/AdminDashboardTest.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FinPro_JuaraCoding_Kel1$AdminLoginTest.ic" NAME="AdminLoginTest Coverage Results" MODIFIED="1705378651798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>TestNG.admin.*</FILTER>
+    </SUITE>
   </component>
 </project>

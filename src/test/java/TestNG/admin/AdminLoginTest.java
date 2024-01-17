@@ -7,11 +7,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static com.juaracoding.utils.Constant.ADMIN_URL;
-
 public class AdminLoginTest extends TestBase {
     AdminLoginPage adminLoginPage;
     GlobalElementPage globalElementPage;
-
     @BeforeClass
     public void testSetUpEnvironmentChrome(){
         setUpChrome();
@@ -19,7 +17,6 @@ public class AdminLoginTest extends TestBase {
         adminLoginPage = new AdminLoginPage();
         globalElementPage = new GlobalElementPage();
     }
-
     @Test(priority = 1)
     public void testValidLogin(){
         globalElementPage.setEmail("admin@hadir.com");
