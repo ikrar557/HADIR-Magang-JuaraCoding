@@ -27,13 +27,16 @@ public class AdminJabatanPage {
     private WebElement tambahkanButton;
 
     @FindBy(xpath = "//button[normalize-space()='Tambah']")
+    private WebElement tambahButton;
+
+    @FindBy(xpath = "//button[normalize-space()='Simpan']")
     private WebElement simpanButton;
 
     @FindBy(xpath = "//button[normalize-space()='Batal']")
     private WebElement batalButton;
 
     @FindBy(id="name")
-    private WebElement nameField;
+    public WebElement nameField;
 
     @FindBy(id="level")
     private WebElement levelField;
@@ -56,11 +59,14 @@ public class AdminJabatanPage {
     @FindBy(xpath = "//*[@id='mui-1']")
     private WebElement rowPerPageDropdown;
 
+    @FindBy(xpath = "//li[@data-value='5']")
+    private WebElement rowPerPage5;
+
     @FindBy(xpath = "//button[@title='Go to first page']")
-    private WebElement firstPageButton;
+    public WebElement firstPageButton;
 
     @FindBy(xpath = "//button[@title='Go to last page']")
-    private WebElement lastPageButton;
+    public WebElement lastPageButton;
 
     @FindBy(xpath = "//button[@title='Go to previous page']")
     private WebElement previousPageButton;
@@ -88,7 +94,7 @@ public class AdminJabatanPage {
     }
 
     public void clickSimpanButton(){
-        simpanButton.click();
+        tambahButton.click();
     }
 
     public void clickBatalButton(){
@@ -119,12 +125,13 @@ public class AdminJabatanPage {
         deleteConfirmationButton.click();
     }
 
-    public void clickDeleteConfirmationCancelButton(){
-        deleteConfirmationCancelButton.click();
-    }
 
     public void clickRowPerPageDropdown(){
         rowPerPageDropdown.click();
+    }
+
+    public void clickRowPerPage5(){
+        rowPerPage5.click();
     }
 
     public void clickFirstPageButton(){
@@ -147,12 +154,13 @@ public class AdminJabatanPage {
         return driver.getPageSource().contains(name);
     }
 
-    public boolean isJabatanNotExist(String name){
-        return !driver.getPageSource().contains(name);
-    }
 
     public String getPopUpContent() {
         return popUpNotification.getText();
+    }
+
+    public void clickSimpanButtonOnEdit(){
+        simpanButton.click();
     }
 
     public boolean isPopUpVisible() {
@@ -165,6 +173,10 @@ public class AdminJabatanPage {
         }
 
         return false;
+    }
+
+    public boolean isButtonDisabled(WebElement element) {
+        return element.getAttribute("disabled") != null;
     }
 
 }
