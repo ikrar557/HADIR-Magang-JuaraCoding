@@ -2,11 +2,47 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/com/juaracoding/staff/StaffLoginTest.java">
+          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/admin/AdminLoginTest.java">
+        <classes>
+            <class name="TestNG.admin.AdminLoginTest">
+                <methods>
+                    <include name="testValidLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/admin/AdminKehadiranTest.java">
         <classes/>
     </test>
     <test verbose="2" preserve-order="true"
-          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/com/juaracoding/admin/AdminLoginTest.java">
-        <classes/>
+          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/staff/StaffLoginTest.java">
+        <classes>
+            <class name="TestNG.staff.StaffLoginTest">
+                <methods>
+                    <include name="testValidLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/test/java/TestNG/staff/RegisterStaffTest.java">
+        <classes>
+            <class name="TestNG.staff.RegisterStaffTest">
+                <methods>
+                    <include name="testNavigateToInvalidRegisterPage"/>
+                    <include name="testNavigateToValidRegisterPage"/>
+                    <include name="testInputEmailWithoutAddSymbol"/>
+                    <include name="testInputRegisteredEmail"/>
+                    <include name="testInputImageWithSizeMoreThan2MB"/>
+                    <include name="testInputImageWithNonImagesFormat"/>
+                    <include name="testBlankInputNik"/>
+                    <include name="testBlankInputFullName"/>
+                    <include name="testBlankInputEmail"/>
+                    <include name="testBlankInputPassword"/>
+                    <include name="testBlankInputSelfieImages"/>
+                </methods>
+            </class>
+        </classes>
     </test>
 </suite>
