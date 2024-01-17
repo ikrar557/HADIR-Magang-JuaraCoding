@@ -27,24 +27,27 @@ public class AdminJabatanPage {
     private WebElement tambahkanButton;
 
     @FindBy(xpath = "//button[normalize-space()='Tambah']")
+    private WebElement tambahButton;
+
+    @FindBy(xpath = "//button[normalize-space()='Simpan']")
     private WebElement simpanButton;
 
     @FindBy(xpath = "//button[normalize-space()='Batal']")
     private WebElement batalButton;
 
     @FindBy(id="name")
-    private WebElement nameField;
+    public WebElement nameField;
 
     @FindBy(id="level")
     private WebElement levelField;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div/div/div[1]/div/div/div/div[2]/div/table/tbody/tr[3]/td[3]/div/div/button") // TODO: TODO: CURRENT ROW: 3 change this to target row"
+    @FindBy(xpath = "/html/body/div[1]/div/div/div/div[1]/div/div/div/div[2]/div/table/tbody/tr[1]/td[3]/div/div/button") // TODO: TODO: CURRENT ROW: 3 change this to target row"
     private WebElement verticalEllipsisButton;
 
-    @FindBy(xpath = "/html/body/div[4]/div[3]/ul/li[1]") // TODO: CURRENT ROW: 3 change this to target row
+    @FindBy(xpath = "//li[@tabindex='0']") // TODO: CURRENT ROW: 3 change this to target row
     private WebElement editButton;
 
-    @FindBy(xpath = "/html/body/div[4]/div[3]/ul/li[2]") // TODO: CURRENT ROW: 3 change this to target row
+    @FindBy(xpath = "//li[@tabindex='-1']") // TODO: CURRENT ROW: 3 change this to target row
     private WebElement deleteButton;
     
     @FindBy(xpath = "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-4075ia']")
@@ -56,11 +59,14 @@ public class AdminJabatanPage {
     @FindBy(xpath = "//*[@id='mui-1']")
     private WebElement rowPerPageDropdown;
 
+    @FindBy(xpath = "//li[@data-value='5']")
+    private WebElement rowPerPage5;
+
     @FindBy(xpath = "//button[@title='Go to first page']")
-    private WebElement firstPageButton;
+    public WebElement firstPageButton;
 
     @FindBy(xpath = "//button[@title='Go to last page']")
-    private WebElement lastPageButton;
+    public WebElement lastPageButton;
 
     @FindBy(xpath = "//button[@title='Go to previous page']")
     private WebElement previousPageButton;
@@ -68,7 +74,8 @@ public class AdminJabatanPage {
     @FindBy(xpath = "//button[@title='Go to next page']")
     private WebElement nextPageButton;
 
-
+    @FindBy(css = ".MuiSnackbarContent-message")
+    private WebElement popUpNotification;
 
     public void inputSearchField(String search){
         searchField.sendKeys(search);
@@ -87,7 +94,7 @@ public class AdminJabatanPage {
     }
 
     public void clickSimpanButton(){
-        simpanButton.click();
+        tambahButton.click();
     }
 
     public void clickBatalButton(){
@@ -118,12 +125,13 @@ public class AdminJabatanPage {
         deleteConfirmationButton.click();
     }
 
-    public void clickDeleteConfirmationCancelButton(){
-        deleteConfirmationCancelButton.click();
-    }
 
     public void clickRowPerPageDropdown(){
         rowPerPageDropdown.click();
+    }
+
+    public void clickRowPerPage5(){
+        rowPerPage5.click();
     }
 
     public void clickFirstPageButton(){
@@ -140,6 +148,35 @@ public class AdminJabatanPage {
 
     public void clickNextPageButton(){
         nextPageButton.click();
+    }
+
+    public boolean isJabatanExist(String name){
+        return driver.getPageSource().contains(name);
+    }
+
+
+    public String getPopUpContent() {
+        return popUpNotification.getText();
+    }
+
+    public void clickSimpanButtonOnEdit(){
+        simpanButton.click();
+    }
+
+    public boolean isPopUpVisible() {
+
+        boolean result;
+        try {
+            return popUpNotification.isDisplayed();
+        } catch (Exception e) {
+            System.out.printf(e.getMessage());
+        }
+
+        return false;
+    }
+
+    public boolean isButtonDisabled(WebElement element) {
+        return element.getAttribute("disabled") != null;
     }
 
 }
