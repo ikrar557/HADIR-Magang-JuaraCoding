@@ -19,7 +19,7 @@ public class DummyTest extends TestBase {
     public AdminDashboardPage adminDashboardPage;
     public PosisiPage posisiPage;
     public ClientUplinerPage clientUplinerPage;
-    public  GlobalElementPage globalElementPage;
+    public GlobalElementPage globalElementPage;
 
     Faker faker = new Faker();
 

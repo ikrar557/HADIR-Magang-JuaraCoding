@@ -39,25 +39,25 @@ public class DashboardTest {
 //        extentTest.log(LogStatus.PASS, "User success move to division menu");
 //    }
 
-//    @When("User click unit sidebar")
-//    public void user_click_unit_sidebar(){
-//        adminDashboardPage.clickUnitSideBar();
-//        extentTest.log(LogStatus.PASS, "User click unit sidebar");
+    @When("User click unit sidebar")
+    public void user_click_unit_sidebar(){
+        adminDashboardPage.clickUnitSideBar();
+        extentTest.log(LogStatus.PASS, "User click unit sidebar");
+    }
+
+    @Then("User success move to unit menu")
+    public void user_success_move_to_unit_menu(){
+        extentTest.log(LogStatus.PASS, "User success move to unit menu");
+    }
+
+//    @When("User click client upliner sidebar")
+//    public void user_click_client_upliner_sidebar(){
+//        adminDashboardPage.clickClientUplinerSidebar();
+//        extentTest.log(LogStatus.PASS, "User click client upliner sidebar");
 //    }
 //
-//    @Then("User success move to unit menu")
-//    public void user_success_move_to_unit_menu(){
-//        extentTest.log(LogStatus.PASS, "User success move to unit menu");
+//    @Then("User success move to client upliner menu")
+//    public void user_success_move_to_client_upliner_menu(){
+//        extentTest.log(LogStatus.PASS, "User success move to client upliner menu");
 //    }
-
-    @When("User click client upliner sidebar")
-    public void user_click_client_upliner_sidebar(){
-        adminDashboardPage.clickClientUplinerSidebar();
-        extentTest.log(LogStatus.PASS, "User click client upliner sidebar");
-    }
-
-    @Then("User success move to client upliner menu")
-    public void user_success_move_to_client_upliner_menu(){
-        extentTest.log(LogStatus.PASS, "User success move to client upliner menu");
-    }
 }

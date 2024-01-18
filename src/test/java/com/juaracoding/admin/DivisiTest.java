@@ -366,7 +366,7 @@ public class DivisiTest {
 
     @Then("Berhasil pindah tabel divisi ke halaman paling akhir")
     public void Berhasil_pindah_ke_halaman_paling_akhir(){
-        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "16-20 of 20");
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "21-25 of 25");
 
         extentTest.log(LogStatus.PASS, "Berhasil pindah tabel divisi ke halaman paling akhir");
     }
@@ -382,7 +382,7 @@ public class DivisiTest {
 
     @Then("Berhasil pindah tabel divisi ke halaman sebelumnya")
     public void Berhasil_pindah_ke_halaman_sebelumnya(){
-        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "11-15 of 20");
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "16-20 of 25");
 
         extentTest.log(LogStatus.PASS, "Berhasil pindah tabel divisi ke halaman sebelumnya");
     }
@@ -398,7 +398,7 @@ public class DivisiTest {
 
     @Then("Berhasil pindah tabel divisi ke halaman paling awal")
     public void Berhasil_pindah_ke_halaman_paling_awal() {
-        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "1-5 of 20");
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "1-5 of 25");
 
         extentTest.log(LogStatus.PASS, "Berhasil pindah tabel divisi ke halaman paling awal");
     }
@@ -414,7 +414,7 @@ public class DivisiTest {
 
     @Then("Berhasil pindah tabel divisi ke halaman selanjutnya")
     public void Berhasil_pindah_ke_halaman_selanjutnya() {
-        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "6-10 of 20");
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "6-10 of 25");
 
         extentTest.log(LogStatus.PASS, "Berhasil pindah tabel divisi ke halaman selanjutnya");
     }
