@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cfe1e2bf-75d2-47c8-944c-56d1a42f606d" name="Changes" comment="Second commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/GlobalElementPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/GlobalElementPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/PendaftaranSendiriPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/PendaftaranSendiriPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/features/903PendaftaranSendiri.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/903PendaftaranSendiri.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/PendaftaranSendiriTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/PendaftaranSendiriTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +49,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="mayrista" />
-                    <option name="lastUsedInstant" value="1705059508" />
+                    <option name="lastUsedInstant" value="1705500242" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="ikrar" />
+                    <option name="lastUsedInstant" value="1705500176" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
@@ -131,6 +138,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DummyTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="jc-magang-hadir-hrm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestNG.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestNG.admin" />
+      <option name="MAIN_CLASS_NAME" value="TestNG.admin.DummyTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestRunner" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="jc-magang-hadir-hrm" />
       <extension name="coverage">
@@ -153,8 +177,8 @@
         <item itemvalue="TestNG.TestRunner" />
         <item itemvalue="TestNG.C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" />
         <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="TestNG.DummyTest" />
         <item itemvalue="TestNG.C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/testng.xml" />
-        <item itemvalue="TestNG.TestRunner" />
       </list>
     </recent_temporary>
   </component>

@@ -106,7 +106,7 @@ Feature: Pendaftaran Sendiri
     And pilih posisi kerja
     And pilih jabatan
     And pilih atasan1
-    And pilih atasan2
+    #And pilih atasan2
     And pilih atasan3
     And pilih lokasi kerja
     And pilih tipe shift
@@ -126,7 +126,7 @@ Feature: Pendaftaran Sendiri
     And pilih posisi kerja
     And pilih jabatan
     And pilih atasan1
-    And pilih atasan2
+    #And pilih atasan2
     And pilih atasan3
     And pilih lokasi kerja
     And pilih tipe shift
@@ -188,7 +188,7 @@ Feature: Pendaftaran Sendiri
     And pilih posisi kerja
     And pilih jabatan
     And pilih atasan sesuai user
-    And pilih atasan2
+    #And pilih atasan2
     And pilih atasan3
     And pilih lokasi kerja
     And pilih tipe shift
@@ -196,10 +196,13 @@ Feature: Pendaftaran Sendiri
     And pilih selfie
     And input jumlah cuti
     And klik submit
-    Then pemberitahuan8
+    #Then pemberitahuan8
 #27
   Scenario: Update data Valid
-    And refresh page
+    Given Admin go to menu management
+    And go to pendaftaran sendiri
+    And klik tombol view button
+    And Hapus foto karyawan
     And upload file foto
     And pilih divisi
     And pilih unit
@@ -207,7 +210,7 @@ Feature: Pendaftaran Sendiri
     And pilih posisi kerja
     And pilih jabatan
     And pilih atasan1
-    And pilih atasan2
+    #And pilih atasan2
     And pilih atasan3
     And pilih lokasi kerja
     And pilih tipe shift

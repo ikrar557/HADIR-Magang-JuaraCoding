@@ -72,7 +72,7 @@ public class PendaftaranSendiriPage {
     private WebElement upDataDiceklis;
     @FindBy(xpath = "//*[@id=\"free-solo-with-text-demo\"]")
     private WebElement divisiCeklis;
-    @FindBy(xpath = "//*[@id=\"mui-26\"]")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/div[2]/form/div[2]/div/div[2]/div/div/div/input")
     private WebElement posisiCeklis;
     @FindBy(xpath = "/html/body/div[3]/div[3]/div/div[2]/form/div[2]/div/div[3]/div/div/div/input")
     private WebElement jabatanCeklis;
@@ -84,9 +84,9 @@ public class PendaftaranSendiriPage {
     private WebElement locCeklis;
     @FindBy(xpath = "/html/body/div[3]/div[3]/div/div[2]/form/div[4]/div/div[3]/div/div/div/input")
     private WebElement jdwlCeklis;
-    @FindBy(xpath = "//*[@id=\"mui-27\"]")
+    @FindBy(xpath = "/html/body/div[3]/div[3]/div/div[2]/form/div[5]/div/button")
     private WebElement btnSubmit;
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[1]/div/div[2]/div[1]/div/div[1]")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[1]/div/div[2]/div[1]")
     private WebElement txtErrMessage;
     @FindBy(xpath = "//*[@id=\"alert-dialog-slide-title\"]/button")
     private WebElement tombolSilang;
@@ -102,9 +102,9 @@ public class PendaftaranSendiriPage {
     private WebElement btnView;
     @FindBy(xpath = "//h1[@class='MuiTypography-root MuiTypography-h1 css-czbdxj']")
     private WebElement txtEditData;
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[1]/div/div/div[2]/form/div[2]/div/div[1]/div[2]/div[2]/button")
+    @FindBy(xpath = "//button[@aria-label='Hapus']//*[name()='svg']")
     private WebElement hapusFoto;
-    @FindBy(xpath = "//*[@id=\"upload-image\"]")
+    @FindBy(id = "upload-image")
     private WebElement upFile;
     @FindBy (xpath = "//input[@id='nik']")
     private WebElement inputNik;
@@ -167,7 +167,7 @@ public class PendaftaranSendiriPage {
     private WebElement jumlahCuti;
     @FindBy(xpath = "//button[@id='submit']")
     private WebElement submit;
-    @FindBy(xpath = "//div[@class='MuiSnackbarContent-message css-1w0ym84']")
+    @FindBy(xpath = "//div[@role='alert']")
     private WebElement txtMessage;
     @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[3]/div/div[2]/div/div/div/div[1]")
     private WebElement user;
@@ -350,7 +350,7 @@ public class PendaftaranSendiriPage {
     }
     public void setUpFile(){
         DriverSingleton.delay(2);
-        upFile.sendKeys(System.getProperty("user.dir") + "src/main/resources/upFile/foto.jpeg");
+        upFile.sendKeys(System.getProperty("user.dir") + "/src/main/resources/upFile/foto.jpeg");
         DriverSingleton.delay(2);
     }
     public void setHapusFoto(){
@@ -360,7 +360,7 @@ public class PendaftaranSendiriPage {
     }
     public void upFileDoc(){
         DriverSingleton.delay(2);
-        upFile.sendKeys(System.getProperty("user.dir") + "src/main/resources/upFile/doc.txt");
+        upFile.sendKeys(System.getProperty("user.dir") + "/src/main/resources/upFile/doc.txt");
         DriverSingleton.delay(2);
     }
     public void inputNik(String inNik){
@@ -392,12 +392,20 @@ public class PendaftaranSendiriPage {
     }
     public void pilihDivisi(String pDivisi){
         DriverSingleton.delay(2);
+        this.pilihDivisi.sendKeys(Keys.CONTROL + "A");
+        DriverSingleton.delay(2);
+        this.pilihDivisi.sendKeys(Keys.DELETE);
+        DriverSingleton.delay(2);
         this.pilihDivisi.sendKeys(pDivisi);
         DriverSingleton.delay(3);
         klikDivisi.click();
         DriverSingleton.delay(2);
     }
     public void pilihUnit(String units){
+        DriverSingleton.delay(2);
+        this.pilihUnit.sendKeys(Keys.CONTROL + "A");
+        DriverSingleton.delay(2);
+        this.pilihUnit.sendKeys(Keys.DELETE);
         DriverSingleton.delay(2);
         this.pilihUnit.sendKeys(units);
         DriverSingleton.delay(2);
@@ -406,12 +414,20 @@ public class PendaftaranSendiriPage {
     }
     public void pilihTipeKontrak(String tpKontrak){
         DriverSingleton.delay(2);
+        this.pilihTipeKontrak.sendKeys(Keys.CONTROL + "A");
+        DriverSingleton.delay(2);
+        this.pilihTipeKontrak.sendKeys(Keys.DELETE);
+        DriverSingleton.delay(2);
         this.pilihTipeKontrak.sendKeys(tpKontrak);
         DriverSingleton.delay(2);
         tipeKontrak.click();
         DriverSingleton.delay(2);
     }
     public void pilihPosisiKerja(String posisis){
+        DriverSingleton.delay(2);
+        this.pilihPosisiKerja.sendKeys(Keys.CONTROL + "A");
+        DriverSingleton.delay(2);
+        this.pilihPosisiKerja.sendKeys(Keys.DELETE);
         DriverSingleton.delay(2);
         this.pilihPosisiKerja.sendKeys(posisis);
         DriverSingleton.delay(2);
@@ -420,6 +436,10 @@ public class PendaftaranSendiriPage {
     }
     public void pilihJabatan(String jabatn){
         DriverSingleton.delay(2);
+        this.pilihJabatan.sendKeys(Keys.CONTROL + "A");
+        DriverSingleton.delay(2);
+        this.pilihJabatan.sendKeys(Keys.DELETE);
+        DriverSingleton.delay(2);
         this.pilihJabatan.sendKeys(jabatn);
         DriverSingleton.delay(2);
         pJabatan.click();
@@ -427,12 +447,20 @@ public class PendaftaranSendiriPage {
     }
     public void pilihAtasan(String atasan1){
         DriverSingleton.delay(2);
+        this.pilihAtasan.sendKeys(Keys.CONTROL + "A");
+        DriverSingleton.delay(2);
+        this.pilihAtasan.sendKeys(Keys.DELETE);
+        DriverSingleton.delay(2);
         this.pilihAtasan.sendKeys(atasan1);
         DriverSingleton.delay(2);
         atasan.click();
         DriverSingleton.delay(2);
     }
     public void atasanFailed(){
+        DriverSingleton.delay(2);
+        this.pilihAtasan.sendKeys(Keys.CONTROL + "A");
+        DriverSingleton.delay(2);
+        this.pilihAtasan.sendKeys(Keys.DELETE);
         DriverSingleton.delay(2);
         pilihAtasan.click();
         DriverSingleton.delay(2);
@@ -448,12 +476,20 @@ public class PendaftaranSendiriPage {
     }
     public void pilihAtasan3(String atasanv3){
         DriverSingleton.delay(2);
+        this.pilihAtasan3.sendKeys(Keys.CONTROL + "A");
+        DriverSingleton.delay(2);
+        this.pilihAtasan3.sendKeys(Keys.DELETE);
+        DriverSingleton.delay(2);
         this.pilihAtasan3.sendKeys(atasanv3);
         DriverSingleton.delay(2);
         atasan3.click();
         DriverSingleton.delay(2);
     }
     public void pilihLokasiKerja(String locKerja){
+//        DriverSingleton.delay(2);
+//        this.pilihLokasiKerja.sendKeys(Keys.CONTROL + "A");
+//        DriverSingleton.delay(2);
+//        this.pilihLokasiKerja.sendKeys(Keys.DELETE);
         DriverSingleton.delay(2);
         this.pilihLokasiKerja.sendKeys(locKerja);
         DriverSingleton.delay(2);

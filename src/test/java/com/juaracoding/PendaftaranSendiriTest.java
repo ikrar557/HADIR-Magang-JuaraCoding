@@ -1,5 +1,7 @@
 package com.juaracoding;
 
+import com.juaracoding.drivers.DriverSingleton;
+import com.juaracoding.pages.GlobalElementPage;
 import com.juaracoding.pages.admin.PendaftaranSendiriPage;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -14,6 +16,7 @@ public class PendaftaranSendiriTest {
     private static WebDriver driver;
     private static ExtentTest extentTest;
     public static PendaftaranSendiriPage pendaftaranSendiriPage = new PendaftaranSendiriPage();
+    public static GlobalElementPage globalElementPage = new GlobalElementPage();
 
     public PendaftaranSendiriTest() {
         driver = Hooks.driver;
@@ -118,19 +121,19 @@ public class PendaftaranSendiriTest {
     }
     @And("klik 25")
     public void klik_25(){
-        pendaftaranSendiriPage.setData10();
+       globalElementPage.clickFilterRowBy25();
         extentTest.log(LogStatus.PASS,"klik 25");
     }
     //Button data perhalaman 10
     @And("klik 10")
     public void klik_10(){
-        pendaftaranSendiriPage.setData10();
+        globalElementPage.clickFilterRowBy10();
         extentTest.log(LogStatus.PASS,"klik 10");
     }
     //Button data perhalaman 5
     @And("klik 5")
     public void klik_5(){
-        pendaftaranSendiriPage.setData10();
+        globalElementPage.clickFilterRowBy5();
         extentTest.log(LogStatus.PASS,"klik 5");
     }
     //Next page user
@@ -141,25 +144,25 @@ public class PendaftaranSendiriTest {
     }
     @And("Klik next page")
     public void klik_next_page(){
-        pendaftaranSendiriPage.setNextPage();
+        globalElementPage.clickNextPageIcon();
         extentTest.log(LogStatus.PASS,"Klik next page");
     }
     //previous page user
     @And("Klik previous page")
     public void klik_previous_page(){
-        pendaftaranSendiriPage.setPervPage();
+        globalElementPage.clickBeforePageIcon();
         extentTest.log(LogStatus.PASS,"Klik previous page");
     }
     //last page user
     @And("Klik last page")
     public void klik_last_page(){
-        pendaftaranSendiriPage.setLastPage();
+        globalElementPage.clickLastPageIcon();
         extentTest.log(LogStatus.PASS,"Klik last page");
     }
     //first page user
     @And("Klik first page")
     public void klik_first_page(){
-        pendaftaranSendiriPage.setFirstPage();
+        globalElementPage.clickFirstPageIcon();
         extentTest.log(LogStatus.PASS,"Klik first page");
     }
     //Batal hapus user registration
@@ -223,7 +226,7 @@ public class PendaftaranSendiriTest {
     }
     @And("pilih atasan1")
     public void pilih_atasan1(){
-        pendaftaranSendiriPage.pilihAtasan("Elanda Nur Afwi Desto");
+        pendaftaranSendiriPage.pilihAtasan("Dummy Air Asia");
         extentTest.log(LogStatus.PASS,"pilih atasan1");
     }
     @And("pilih atasan2")
@@ -398,7 +401,7 @@ public class PendaftaranSendiriTest {
     }
     @And("isi atasan")
     public void isi_atasan(){
-        pendaftaranSendiriPage.atasanCeklis("Elanda Nur Afwi Desto");
+        pendaftaranSendiriPage.atasanCeklis("Dummy Air Asia");
         extentTest.log(LogStatus.PASS,"isi atasan");
     }
     @And("isi kontrak")
