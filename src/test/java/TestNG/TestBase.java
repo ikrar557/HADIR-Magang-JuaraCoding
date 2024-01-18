@@ -9,16 +9,30 @@ import org.testng.annotations.BeforeSuite;
 import static com.juaracoding.utils.Constant.ADMIN_URL;
 
 public class TestBase {
-    public static WebDriver driver;
+
+    protected static WebDriver driver;
+
     @BeforeSuite
-    public void setUpChrome(){
-        DriverSingleton.getInstance("chrome");
-        driver = DriverSingleton.getDriver();
+    public void setUpChrome() {
+        initializeWebDriver("chrome");
     }
 
     @AfterSuite
-    public void finish(){
-        DriverSingleton.delay(3);
+    public void tearDown() {
+        waitBeforeClosing(3);
+        closeWebDriver();
+    }
+
+    private void initializeWebDriver(String browser) {
+        DriverSingleton.getInstance(browser);
+        driver = DriverSingleton.getDriver();
+    }
+
+    private void waitBeforeClosing(long seconds) {
+        DriverSingleton.delay(seconds);
+    }
+
+    private void closeWebDriver() {
         DriverSingleton.closeObjectInstance();
     }
 }

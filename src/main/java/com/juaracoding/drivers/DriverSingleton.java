@@ -7,25 +7,37 @@ import org.openqa.selenium.WebDriver;
 import java.util.concurrent.TimeUnit;
 
 public class DriverSingleton {
-    public static DriverSingleton instance = null;
+
+    private static DriverSingleton instance = null;
     private static WebDriver driver;
-    private DriverSingleton(String driver) {
-        instantiate(driver);
+
+    private DriverSingleton(String driverType) {
+        instantiate(driverType);
     }
 
-    public WebDriver instantiate(String strategy) {
-        DriverStrategy driverStrategy = DriverStrategyImplementer.chooseStrategy(strategy);
-        driver = driverStrategy.setStrategy();
+    public void instantiate(String strategy) {
+        if (driver != null) {
+            return;
+        }
+        try {
+            DriverStrategy driverStrategy = DriverStrategyImplementer.chooseStrategy(strategy);
+            driver = driverStrategy.setStrategy();
+            configureDriver();
+        } catch (Exception e) {
+            // Handle exceptions or log errors
+            throw new RuntimeException("Failed to instantiate WebDriver", e);
+        }
+    }
+
+    private void configureDriver() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        return driver;
     }
 
-    public static DriverSingleton getInstance(String driver){
-        if(instance == null){
-            instance = new DriverSingleton(driver);
+    public static void getInstance(String driverType) {
+        if (instance == null) {
+            instance = new DriverSingleton(driverType);
         }
-        return instance;
     }
 
     public static WebDriver getDriver() {
@@ -35,15 +47,15 @@ public class DriverSingleton {
     public static void delay(long seconds) {
         try {
             Thread.sleep(seconds * 1000);
-        } catch (InterruptedException e){
+        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static void closeObjectInstance(){
+    public static void closeObjectInstance() {
         instance = null;
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
-
-
 }

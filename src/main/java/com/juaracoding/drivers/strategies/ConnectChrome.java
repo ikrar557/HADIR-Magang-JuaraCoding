@@ -13,7 +13,7 @@ public class ConnectChrome implements DriverStrategy {
         ChromeOptions chromeOptions = new ChromeOptions();
 
         chromeOptions.setExperimentalOption("useAutomationExtension", false);
-        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.setExperimentalOption("detach", true);
         return new ChromeDriver(chromeOptions);
     };
 }
