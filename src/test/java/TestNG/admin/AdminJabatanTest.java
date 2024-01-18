@@ -17,10 +17,10 @@ public class AdminJabatanTest extends TestBase {
 
     GlobalElementPage globalElementPage;
     AdminJabatanPage adminJabatanPage;
+    DriverSingleton driverSingleton;
 
     @BeforeClass
     public void testSetUpEnvironmentChrome(){
-        setUpChrome();
         globalElementPage = new GlobalElementPage();
         AdminLogin adminLogin = new AdminLogin(globalElementPage, driver, JABATAN_URL);
         adminLogin.loginUser();
