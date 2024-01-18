@@ -21,7 +21,7 @@ public class JabatanTest {
     private static ExtentTest extentTest;
     public static GlobalElementPage globalElementPage = new GlobalElementPage();
     public static AdminJabatanPage adminJabatanPage = new AdminJabatanPage();
-    private AdminLogin adminLogin;
+    private final AdminLogin adminLogin;
 
     public JabatanTest() {
         driver = Hooks.driver;
@@ -157,19 +157,20 @@ public class JabatanTest {
 
     @And("Klik tombol titik tiga")
     public void klik_tombol_titik_tiga() {
+        DriverSingleton.delay(1);
         adminJabatanPage.clickVerticalEllipsisButton();
         extentTest.log(LogStatus.PASS, "Klik tombol titik tiga");
     }
 
     @And("Klik tombol edit")
     public void klik_tombol_edit() {
+        DriverSingleton.delay(1);
         adminJabatanPage.clickEditButton();
         extentTest.log(LogStatus.PASS, "Klik tombol edit");
     }
 
     @And("Edit nama jabatan")
     public void edit_nama_jabatan() {
-        DriverSingleton.delay(1);
         adminJabatanPage.nameField.clear();
         adminJabatanPage.inputNameField("Boss Besar");
         extentTest.log(LogStatus.PASS, "Edit nama jabatan");
@@ -178,33 +179,34 @@ public class JabatanTest {
     @And("Klik tombol simpan edit")
     public void klik_tombol_simpan_edit() {
         adminJabatanPage.clickSimpanButtonOnEdit();
+        DriverSingleton.delay(3);
         extentTest.log(LogStatus.PASS, "Klik tombol simpan edit");
-        DriverSingleton.delay(1);
     }
 
     @Then("Menampilkan jabatan dengan nama Boss Besar")
     public void menampilkan_jabatan_dengan_nama_boss_besar() {
-        DriverSingleton.delay(1);
         Assert.assertTrue(driver.getPageSource().contains("Boss Besar"));
-        DriverSingleton.delay(3);
         extentTest.log(LogStatus.PASS, "Menampilkan jabatan dengan nama Boss Besar");
     }
 
     // # 6. Delete Jabatan
     @When("Klik tombol titik tiga untuk dihapus")
     public void klik_tombol_titik_tiga_untuk_dihapus() {
+        DriverSingleton.delay(1);
         adminJabatanPage.clickVerticalEllipsisButton();
         extentTest.log(LogStatus.PASS, "Klik tombol titik tiga untuk dihapus");
     }
 
     @And("Klik tombol hapus")
     public void klik_tombol_hapus() {
+        DriverSingleton.delay(1);
         adminJabatanPage.clickDeleteButton();
         extentTest.log(LogStatus.PASS, "Klik tombol hapus");
     }
 
     @And("Klik tombol konfirmasi hapus")
     public void klik_tombol_konfirmasi_hapus() {
+        DriverSingleton.delay(1);
         adminJabatanPage.clickDeleteConfirmationButton();
         extentTest.log(LogStatus.PASS, "Klik tombol konfirmasi hapus");
     }
