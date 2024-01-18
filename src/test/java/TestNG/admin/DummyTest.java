@@ -3,14 +3,13 @@ package TestNG.admin;
 import TestNG.TestBase;
 import com.juaracoding.drivers.DriverSingleton;
 import com.juaracoding.pages.GlobalElementPage;
-import com.juaracoding.pages.admin.AdminDashboardPage;
-import com.juaracoding.pages.admin.AdminLoginPage;
-import com.juaracoding.pages.admin.DivisiPage;
+import com.juaracoding.pages.admin.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import com.github.javafaker.Faker;
 
 import static com.juaracoding.utils.Constant.ADMIN_URL;
 
@@ -18,8 +17,16 @@ public class DummyTest extends TestBase {
     public DivisiPage divisiPage;
     public AdminLoginPage adminLoginPage;
     public AdminDashboardPage adminDashboardPage;
-
+    public PosisiPage posisiPage;
+    public ClientUplinerPage clientUplinerPage;
     public  GlobalElementPage globalElementPage;
+
+    Faker faker = new Faker();
+
+    String fullName = faker.name().fullName();
+    String email = faker.internet().emailAddress();
+    String password = faker.internet().password();
+
 
     @BeforeClass
     public void testEnvironmentSetUP(){
@@ -30,7 +37,10 @@ public class DummyTest extends TestBase {
         divisiPage = new DivisiPage();
         adminLoginPage = new AdminLoginPage();
         adminDashboardPage = new AdminDashboardPage();
+        posisiPage = new PosisiPage();
+        clientUplinerPage = new ClientUplinerPage();
         globalElementPage = new GlobalElementPage();
+
     }
     @AfterClass
     public void finish(){
@@ -53,35 +63,20 @@ public class DummyTest extends TestBase {
         adminLoginPage.clickAdminLoginButton();
         adminDashboardPage.clickManagementSideBar();
 //        adminDashboardPage.clickDivisiSideBar();
-        adminDashboardPage.clickUnitSideBar();
+//        adminDashboardPage.clickUnitSideBar();
+//        adminDashboardPage.clickPosisiSideBar();
+          adminDashboardPage.clickClientUplinerSidebar(); 
     }
 
     @Test(priority = 3)
     public void testMovePage(){
-        globalElementPage.scrollPageToBottom();
-        globalElementPage.clickSelectFilterByRow();
-        DriverSingleton.delay(1);
-        globalElementPage.clickFilterRowBy5();
-        DriverSingleton.delay(1);
 
+        clientUplinerPage.clickAddNewButtonClientUpliner();
+        clientUplinerPage.inputNewClientUpliner(fullName, email, password);
+        clientUplinerPage.setJobDepartementUpliner("Air Asia");
+        clientUplinerPage.setTipeUplinerV2();
+        clientUplinerPage.clickRegisterUpliner();
 
-
-        globalElementPage.clickLastPageIcon();
-        DriverSingleton.delay(1);
-        System.out.println(globalElementPage.getPaginationDisplayedInformation());
-
-        globalElementPage.clickBeforePageIcon();
-        DriverSingleton.delay(1);
-        System.out.println(globalElementPage.getPaginationDisplayedInformation());
-
-        globalElementPage.clickFirstPageIcon();
-        DriverSingleton.delay(1);
-        System.out.println(globalElementPage.getPaginationDisplayedInformation());
-
-        globalElementPage.clickNextPageIcon();
-        DriverSingleton.delay(2);
-        System.out.println(globalElementPage.getPaginationDisplayedInformation());
-
-
+        Assert.assertEquals(globalElementPage.getTextFromTopmostRowSecondColumn(), clientUplinerPage.getRandNamaKaryawanUpliner());
     }
 }

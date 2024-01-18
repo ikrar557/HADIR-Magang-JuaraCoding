@@ -27,4 +27,14 @@ public class AdminDashboardTest{
         adminDashboardPage.clickUnitSideBar();
     }
 
+    @Test(priority = 4, enabled = true)
+    public void testNavigateToPosisiMenu(){
+        adminDashboardPage.clickPosisiSideBar();
+    }
+
+    @Test(priority = 5, enabled = true)
+    public void testNavigateToClientUpliner(){
+        adminDashboardPage.clickClientUplinerSidebar();
+    }
+
 }

@@ -24,6 +24,12 @@ public class AdminDashboardPage {
     @FindBy(xpath = "//p[.='Unit']")
     private WebElement unitSideBar;
 
+    @FindBy(xpath = "//p[.='Posisi']")
+    private WebElement posisiSideBar;
+
+    @FindBy(xpath = "//p[.='Client Upliner']")
+    private WebElement clientUplinerSideBar;
+
     public void clickManagementSideBar(){
         managementSideBar.click();
     }
@@ -34,6 +40,14 @@ public class AdminDashboardPage {
 
     public void clickUnitSideBar(){
         unitSideBar.click();
+    }
+
+    public void clickPosisiSideBar(){
+        posisiSideBar.click();
+    }
+
+    public void clickClientUplinerSidebar(){
+        clientUplinerSideBar.click();
     }
 
 

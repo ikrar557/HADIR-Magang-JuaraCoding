@@ -237,7 +237,25 @@ public class GlobalElementPage {
             return yourTable.findElement(By.xpath(xpath)).getText();
         } catch (NoSuchElementException e) {
             return "";
-        } // TODO: Fix way to make it faster, the try catch waited for too long
+        }
+    }
+
+    public String getTextFromTopmostRowSecondColumn() {
+        try {
+            String xpath = "//table[contains(@class, 'MuiTable-root')]/tbody/tr[1]/td[2]";
+            return yourTable.findElement(By.xpath(xpath)).getText();
+        } catch (NoSuchElementException e) {
+            return "";
+        }
+    }
+
+    public String getTextFromTopmostRowForthColumn() {
+        try {
+            String xpath = "//table[contains(@class, 'MuiTable-root')]/tbody/tr[1]/td[4]";
+            return yourTable.findElement(By.xpath(xpath)).getText();
+        } catch (NoSuchElementException e) {
+            return "";
+        }
     }
 
     public int getCountOfTextInFirstColumn(String searchText) {
