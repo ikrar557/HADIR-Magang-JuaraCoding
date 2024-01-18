@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe1e2bf-75d2-47c8-944c-56d1a42f606d" name="Changes" comment="ADD: Login TestNG and CUCUMBER, please check TODO">
-      <change afterPath="$PROJECT_DIR$/TestResult/extent-report - Divisi.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestResult/extent-report - Unit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/04Unit.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/04Unit.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/features/02Dashboard.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/02Dashboard.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/features/06ClientUpliner.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/06ClientUpliner.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestNG/admin/DummyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/DummyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DashboardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DashboardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DivisiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/DivisiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/features/06ClientUpliner.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/06ClientUpliner.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/ClientUplinerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/admin/ClientUplinerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,26 +89,20 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "ikrar",
-    "last_opened_file_path": "C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/TestResult",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Ikrar/IdeaProjects/jc-magang-hadir-hrm/src/main/java/com/juaracoding/Main.java",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Ikrar\IdeaProjects\jc-magang-hadir-hrm\TestResult" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Ikrar\IdeaProjects\jc-magang-hadir-hrm\src\main\resources\features" />
       <recent name="C:\Users\Ikrar\IdeaProjects\jc-magang-hadir-hrm\src\main\java\com\juaracoding\utils" />
+      <recent name="C:\Users\Ikrar\IdeaProjects\jc-magang-hadir-hrm\src\main\resources\features" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.juaracoding.drivers.strategies" />
@@ -243,10 +231,6 @@
       <workItem from="1705475104446" duration="16061000" />
       <workItem from="1705493193992" duration="11765000" />
       <workItem from="1705535716979" duration="8005000" />
-      <workItem from="1705569373430" duration="172000" />
-      <workItem from="1705569557029" duration="28000" />
-      <workItem from="1705569597404" duration="102000" />
-      <workItem from="1705569715209" duration="947000" />
     </task>
     <task id="LOCAL-00001" summary="ADD: Divisi page with basic cucumber, READ TODO">
       <option name="closed" value="true" />
@@ -315,9 +299,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

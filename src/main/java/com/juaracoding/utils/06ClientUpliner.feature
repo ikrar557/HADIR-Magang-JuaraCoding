@@ -107,3 +107,21 @@ Feature: Input Client Upliner Baru
     And Pilih Tipe "Upliner V2"
     And Klik "Daftar"
     Then Client dengan nama angka gagal ditambahkan
+
+  #10
+  Scenario: Cari nama client dengan nama yang tidak ada pada list
+    Given Masuk menu "Client Upliner"
+    When Masukan nama client yang tidak ada pada list
+    And Klik tombol "Search"
+    Then Tidak muncul client yang dicari
+
+  #11
+  Scenario: Reset pencarian nama client
+    Given Masuk menu "Client Upliner"
+    When Masukan nama client pada kolom pencarian
+    And Klik tombol "Search"
+    And Muncul nama client yang dicari
+    And Klik tombol "Reset"
+    Then Daftar client kembali ke semula
+  #12
+#  Scenario: Cari client dengan nama "12345678"
