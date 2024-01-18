@@ -13,6 +13,7 @@ import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -195,5 +196,40 @@ public class ClientUplinerTest {
         Assert.assertNotEquals(globalElementPage.getTextFromTopmostRowSecondColumn(), "12345678");
         extentTest.log(LogStatus.PASS, "Client dengan nama angka gagal ditambahkan");
     }
-    // 10 Scenario :
+
+    // 10 Scenario : Cari nama client dengan nama yang tidak ada pada list
+    @When("Masukan nama client yang tidak ada pada list")
+    public void masukan_nama_client_yang_tidak_ada_pada_list(){
+        globalElementPage.setSearchName(fullName);
+        globalElementPage.clickSearchSubmitButton();
+
+        extentTest.log(LogStatus.PASS, "Masukan nama client yang tidak ada pada list");
+    }
+
+    @Then("Tidak muncul client yang dicari")
+    public void tidak_muncul_client_yang_dicari(){
+        Assert.assertEquals(globalElementPage.getCountOfRowsInFirstColumn(), 0);
+        extentTest.log(LogStatus.PASS, "Tidak muncul client yang dicari");
+    }
+
+    // 11 Scenario : Reset pencarian nama client
+    @When("Masukan nama client pada kolom pencarian")
+    public void masukan_nama_client_pada_kolom_pencarian(){
+        globalElementPage.setSearchName("12345678");
+        globalElementPage.clickSearchSubmitButton();
+        extentTest.log(LogStatus.PASS, "Masukan nama client pada kolom pencarian");
+    }
+
+    @And("Muncul nama client yang dicari")
+    public void muncul_nama_client_yang_dicari(){
+        Assert.assertEquals(globalElementPage.getTextFromSearchButton(), "12345678");
+        extentTest.log(LogStatus.PASS, "Muncul nama client yang dicari");
+    }
+
+    @Then("Daftar client kembali ke semula")
+    public void daftar_client_kembali_ke_semula(){
+        Assert.assertEquals(globalElementPage.getCountOfRowsInFirstColumn(), 10);
+        extentTest.log(LogStatus.PASS, "Daftar client kembali ke semula");
+    }
+
 }
