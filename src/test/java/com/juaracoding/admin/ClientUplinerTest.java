@@ -6,6 +6,7 @@ import com.juaracoding.drivers.DriverSingleton;
 import com.juaracoding.pages.GlobalElementPage;
 import com.juaracoding.pages.admin.AdminDashboardPage;
 import com.juaracoding.pages.admin.ClientUplinerPage;
+import com.mongodb.DBRef;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.relevantcodes.extentreports.model.Log;
@@ -210,6 +211,9 @@ public class ClientUplinerTest {
     public void tidak_muncul_client_yang_dicari(){
         Assert.assertEquals(globalElementPage.getCountOfRowsInFirstColumn(), 0);
         extentTest.log(LogStatus.PASS, "Tidak muncul client yang dicari");
+
+        clientUplinerPage.clickResetSearchClientUpliner();
+        DriverSingleton.delay(1);
     }
 
     // 11 Scenario : Reset pencarian nama client
@@ -228,8 +232,255 @@ public class ClientUplinerTest {
 
     @Then("Daftar client kembali ke semula")
     public void daftar_client_kembali_ke_semula(){
+        DriverSingleton.delay(2);
         Assert.assertEquals(globalElementPage.getCountOfRowsInFirstColumn(), 10);
         extentTest.log(LogStatus.PASS, "Daftar client kembali ke semula");
     }
+
+    // 12 Scenario : Cari client dengan nama yang sudah ditentukan (Done)
+
+    // 13 Scenario : Edit nama client menjadi "Ikrar Bagaskara"
+    @Given("Cari nama client yang ingin di edit pada kolom pencarian")
+    public void cari_nama_client_yang_ingin_di_edit_pada_kolom_pencarian(){
+        clientUplinerPage.clickResetSearchClientUpliner();
+
+        globalElementPage.setSearchName("12345678");
+        globalElementPage.clickSearchSubmitButton();
+        extentTest.log(LogStatus.PASS, "Cari nama client yang ingin di edit pada kolom pencarian");
+    }
+
+    @When("Klik icon 3 baris pada sisi kanan baris nama client")
+    public void klik_icon_3_baris_pada_sisi_kanan_baris_nama_client(){
+        globalElementPage.clickEditOrDeleteRowButton();
+        extentTest.log(LogStatus.PASS, "Klik icon 3 baris pada sisi kanan baris nama client");
+    }
+
+    @And("Rubah \"Nama Karyawan\" menjadi nama client baru")
+    public void rubah_nama_karyawan_menjadi_nama_client_baru(){
+        clientUplinerPage.setFullNameUpliner("Ikrar Bagaskara");
+        extentTest.log(LogStatus.PASS, "Rubah \"Nama Karyawan\" menjadi nama client baru");
+    }
+
+    @And("Klik \"Ubah\"")
+    public void klik_ubah(){
+        clientUplinerPage.clickRegisterUpliner();
+        extentTest.log(LogStatus.PASS, "Klik \"Ubah\"");
+    }
+
+    @Then("Nama karyawan berubah menjadi nama client baru")
+    public void nama_karyawan_berubah_menjadi_nama_client_baru(){
+        Assert.assertEquals(globalElementPage.getTextFromTopmostRowSecondColumn(), "Ikrar Bagaskara");
+        extentTest.log(LogStatus.PASS, "Nama karyawan berubah menjadi nama client baru");
+    }
+
+    // 14 Scenario : Edit client dengan nama "Ikrar Bagaskara" menjadi angka saja
+    @Given("Cari nama client yang ingin di edit nama menjadi angka")
+    public void cari_nama_client_yang_ingin_di_edit_nama_menjadi_angka(){
+        globalElementPage.setSearchName("Ikrar Bagaskara");
+        globalElementPage.clickSearchSubmitButton();
+        extentTest.log(LogStatus.PASS, "Cari nama client yang ingin di edit nama menjadi angka");
+    }
+
+    @And("Rubah \"Nama Karyawan\" menjadi angka saja")
+    public void  rubah_nama_karyawan_menjadi_angka_saja(){
+        clientUplinerPage.setFullNameUpliner("987456321");
+        extentTest.log(LogStatus.PASS, "Rubah \"Nama Karyawan\" menjadi angka saja");
+    }
+
+    @Then("Error harusnya nama karyawan tidak boleh hanya angka saja")
+    public void error_harusnya_nama_karyawan_tidak_boleh_hanya_angka_saja(){
+        Assert.assertNotEquals(globalElementPage.getTextFromTopmostRowSecondColumn(), "987456321");
+        extentTest.log(LogStatus.PASS, "Error harusnya nama karyawan tidak boleh hanya angka saja");
+    }
+
+    // 15 Scenario : Edit client dengan nama client menjadi identik dengan nama client lain
+    @Given("Cari nama client yang ingin di edit nama menjadi identik nama lain")
+    public void cari_nama_client_yang_ingin_di_edit_nama_menjadi_identik_nama_lain(){
+        globalElementPage.setSearchName("987456321");
+        globalElementPage.clickSearchSubmitButton();
+        extentTest.log(LogStatus.PASS, "Cari nama client yang ingin di edit nama menjadi identik nama lain");
+    }
+
+    @And("Rubah \"Nama Karyawan\" menjadi nama client identik")
+    public void rubah_nama_karyawan_menjadi_nama_client_identik(){
+        clientUplinerPage.setFullNameUpliner("HR Test V3");
+        extentTest.log(LogStatus.PASS, "Rubah \"Nama Karyawan\" menjadi nama client identik");
+    }
+
+    @Then("Gagal edit nama client, nama identik dengan client lain")
+    public void gagal_edit_nama_client_nama_identik_dengan_client_lain(){
+        globalElementPage.setSearchName("HR Test V3");
+        globalElementPage.clickSearchSubmitButton();
+        DriverSingleton.delay(1);
+
+        Assert.assertEquals(globalElementPage.getCountOfTextInFirstColumn("HR Test V3"), "1");
+        extentTest.log(LogStatus.PASS, "Gagal edit nama client, nama identik dengan client lain");
+
+        globalElementPage.clickSearchSubmitButton();
+    }
+
+    // 16 Scenario : Edit email client menggunakan email baru
+    @Given("Cari nama client yang ingin di edit email baru pada kolom pencarian")
+    public void cari_nama_client_yang_ingin_di_edit_email_baru_pada_kolom_pencarian(){
+        globalElementPage.setSearchName("HR Test V3");
+        globalElementPage.clickSearchSubmitButton();
+        DriverSingleton.delay(1);
+        extentTest.log(LogStatus.PASS, "Cari nama client yang ingin di edit email baru pada kolom pencarian");
+    }
+
+    @And("Rubah \"Email\" menjadi email baru")
+    public void rubah_email_menjadi_email_baru(){
+        clientUplinerPage.setEmailUpliner(email);
+        extentTest.log(LogStatus.PASS, "Rubah \"Email\" menjadi email baru");
+    }
+
+    @Then("Alamat karyawan berubah menjadi alamat email baru")
+    public void alamat_karyawan_berubah_menjadi_alamat_email_baru(){
+        Assert.assertEquals(globalElementPage.getTextFromTopmostRowThirdColumn(), clientUplinerPage.getRandEmailKaryawanUpliner());
+        extentTest.log(LogStatus.PASS, "Alamat karyawan berubah menjadi alamat email baru");
+    }
+
+    // 17 Scenario : Edit email client menggunakan email yang sudah digunakan
+    @And("Rubah \"Email\" menjadi email yang sudah terdaftar")
+    public void rubah_email_menjadi_email_yang_sudah_terdaftar(){
+        clientUplinerPage.setEmailUpliner("admin@hadir.com");
+        extentTest.log(LogStatus.PASS, "Rubah \"Email\" menjadi email yang sudah terdaftar");
+    }
+    @Then("Muncul pop-up \"Email sudah terdaftar\"")
+    public void muncul_pop_up_terjadi_kesalahan_pada_server(){
+        Assert.assertEquals(globalElementPage.getErrorNewItem(), "Terjadi kesalahan pada server");
+        driver.navigate().refresh();
+        driver.navigate().back();
+        extentTest.log(LogStatus.PASS, "Muncul pop-up \"Email sudah terdaftar\"");
+    }
+
+    // 18 Scenario : Edit client dengan unit "Air Asia" menjadi "TEKNISI EDC"
+    @Given("Cari client dengan unit yang sudah ditentukan")
+    public void cari_client_dengan_unit_yang_sudah_ditentukan(){
+        globalElementPage.clickResetSearchButton();
+        globalElementPage.setSearchName("HR Test V3");
+        globalElementPage.clickSearchSubmitButton();
+        DriverSingleton.delay(1);
+
+        extentTest.log(LogStatus.PASS, "Cari client dengan unit yang sudah ditentukan");
+    }
+
+    @And("Rubah \"Unit\" menjadi unit yang sudah ditentukan")
+    public void rubah_unit_menjadi_unit_yang_sudah_ditentukan(){
+        clientUplinerPage.setJobDepartementUpliner("TEKNISI EDC");
+        extentTest.log(LogStatus.PASS, "Rubah \"Unit\" menjadi unit yang sudah ditentukan");
+    }
+
+    @Then("Nama unit berubah menjadi nama unit baru")
+    public void nama_unit_berubah_menjadi_nama_unit_baru(){
+        Assert.assertEquals(globalElementPage.getTextFromTopmostRowForthColumn(), "TEKNISI EDC");
+        extentTest.log(LogStatus.PASS, "Nama unit berubah menjadi nama unit baru");
+    }
+
+    // 19 Scenario : Batal filter berdasarkan unit "Air Asia"
+    @When("Klik icon \"Filter\"")
+    public void klik_icon_filter(){
+        clientUplinerPage.clickFilterByUnit();
+        extentTest.log(LogStatus.PASS, "Klik icon \"Filter\"");
+    }
+
+    @And("Pilih unit yang akan difilter")
+    public void pilih_unit_yang_akan_difilter(){
+        clientUplinerPage.clickSelectFilterUnit();
+        DriverSingleton.delay(1);
+        clientUplinerPage.clickSelectFilterAirAsia();
+        extentTest.log(LogStatus.PASS, "Pilih unit yang akan difilter");
+    }
+
+    @And("Klik \"Batal\" filter unit")
+    public void klik_batal_filter_unit(){
+        globalElementPage.clickCancelAddNewItemButton();
+        extentTest.log(LogStatus.PASS, "Klik \"Batal\" filter unit");
+    }
+    @Then("Daftar client belum terfillter")
+    public void daftar_client_belum_terfillter(){
+        Assert.assertEquals(globalElementPage.getTextFromTopmostRowForthColumn(), "TEKNISI EDC");
+        extentTest.log(LogStatus.PASS, "Daftar client belum terfillter");
+    }
+
+    // 20 Scenario : Filter berdasarkan unit "Air Asia"
+    @And("Klik \"Terapkan\"")
+    public void klik_terapkan(){
+        globalElementPage.clickSaveNewItemButton();
+        extentTest.log(LogStatus.PASS, "Klik \"Terapkan\"");
+    }
+
+    @Then("Daftar client sudah terfilter")
+    public void daftar_client_sudah_terfilter(){
+        DriverSingleton.delay(2);
+        Assert.assertEquals(globalElementPage.getTextFromTopmostRowForthColumn(), "Air Asia");
+        extentTest.log(LogStatus.PASS, "Daftar client sudah terfilter");
+
+        globalElementPage.clickResetSearchButton();
+    }
+
+    // 21 Scenario : Batal delete client yang sudah ditambahkan
+    @Given("Cari nama client yang akan dihapus pada kolom pencarian")
+    public void cari_nama_client_yang_akan_dihapus_pada_kolom_pencarian(){
+        clientUplinerPage.clickResetSearchClientUpliner();
+        globalElementPage.setSearchName("HR Test V3");
+        globalElementPage.clickSearchSubmitButton();
+        DriverSingleton.delay(1);
+
+        extentTest.log(LogStatus.PASS, "Cari nama client yang akan dihapus pada kolom pencarian");
+    }
+
+    @Then("Client masih ada pada daftar client")
+    public void client_masih_ada_pada_daftar_client(){
+        Assert.assertEquals(globalElementPage.getCountOfTextInSecondColumn("HR Test V3"), 4);
+        extentTest.log(LogStatus.PASS, "Client masih ada pada daftar client");
+    }
+
+    // 22 Scenario : Delete client sudah ditambahkan
+    @Then("Client berhasil dihapus dari daftar client")
+    public void client_berhasil_dihapus_dari_daftar_client(){
+        Assert.assertEquals(globalElementPage.getCountOfTextInSecondColumn("HR Test V3"), 2);
+
+        extentTest.log(LogStatus.PASS, "Client berhasil dihapus dari daftar client");
+
+        clientUplinerPage.clickResetSearchClientUpliner();
+        DriverSingleton.delay(2);
+    }
+
+    // 23 Scenario : Filter jumlah baris yang ditampilkan menjadi 5 baris pada setiap halaman  (Done)
+    // 24 Scenario : Filter jumlah baris yang ditampilkan menjadi 10 baris pada setiap halaman (Done)
+    // 25 Scenario : Filter jumlah baris yang ditampilkan menjadi 25 baris pada setiap halaman (Done)
+    // 26 Scenario : Pindah ke halaman paling akhir
+    @Then("Berhasil pindah table upliner ke halaman paling akhir")
+    public void berhasil_pindah_table_upliner_ke_halaman_paling_akhir(){
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "156-156 of 156");
+
+        extentTest.log(LogStatus.PASS, "");
+    }
+
+    // 27 Scenario : Pindah ke halaman sebelumnya
+    @Then("Berhasil pindah table upliner ke halaman sebelumnya")
+    public void berhasil_pindah_table_upliner_ke_halaman_sebelumnya(){
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "151-155 of 156");
+
+        extentTest.log(LogStatus.PASS, "");
+    }
+
+    // 28 Scenario : Pindah ke halaman paling awal
+    @Then("Berhasil pindah table upliner ke halaman paling awal")
+    public void berhasil_pindah_table_upliner_ke_halaman_paling_awal(){
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "1-5 of 156");
+
+        extentTest.log(LogStatus.PASS, "");
+    }
+
+    // 29 Scenario : Pindah ke halaman selanjutnya
+    @Then("Berhasil pindah table upliner ke halaman selanjutnya")
+    public void berhasil_pindah_table_upliner_ke_halaman_selanjutnya (){
+        Assert.assertEquals(globalElementPage.getPaginationDisplayedInformation(), "6-10 of 156");
+
+        extentTest.log(LogStatus.PASS, "");
+    }
+
 
 }

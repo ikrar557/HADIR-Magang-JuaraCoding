@@ -249,6 +249,15 @@ public class GlobalElementPage {
         }
     }
 
+    public String getTextFromTopmostRowThirdColumn() {
+        try {
+            String xpath = "//table[contains(@class, 'MuiTable-root')]/tbody/tr[1]/td[3]";
+            return yourTable.findElement(By.xpath(xpath)).getText();
+        } catch (NoSuchElementException e) {
+            return "";
+        }
+    }
+
     public String getTextFromTopmostRowForthColumn() {
         try {
             String xpath = "//table[contains(@class, 'MuiTable-root')]/tbody/tr[1]/td[4]";
@@ -261,6 +270,22 @@ public class GlobalElementPage {
     public int getCountOfTextInFirstColumn(String searchText) {
         try {
             String xpath = "//table[contains(@class, 'MuiTable-root')]/tbody/tr/td[1]";
+            List<WebElement> firstColumnElements = yourTable.findElements(By.xpath(xpath));
+            int count = 0;
+            for (WebElement element : firstColumnElements) {
+                if (element.getText().equals(searchText)) {
+                    count++;
+                }
+            }
+            return count;
+        } catch (NoSuchElementException e) {
+            return 0;
+        }
+    }
+
+    public int getCountOfTextInSecondColumn(String searchText) {
+        try {
+            String xpath = "//table[contains(@class, 'MuiTable-root')]/tbody/tr/td[2]";
             List<WebElement> firstColumnElements = yourTable.findElements(By.xpath(xpath));
             int count = 0;
             for (WebElement element : firstColumnElements) {

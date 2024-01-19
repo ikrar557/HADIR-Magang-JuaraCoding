@@ -28,16 +28,16 @@ public class DashboardTest {
         extentTest.log(LogStatus.PASS, "User click management sidebar");
     }
 
-//    @When("User click division sidebar")
-//    public void user_click_division_sidebar(){
-//        adminDashboardPage.clickDivisiSideBar();
-//        extentTest.log(LogStatus.PASS, "User click division sidebar");
-//    }
-//
-//    @Then("User success move to division menu")
-//    public void user_success_move_to_division_menu(){
-//        extentTest.log(LogStatus.PASS, "User success move to division menu");
-//    }
+    @When("User click division sidebar")
+    public void user_click_division_sidebar(){
+        adminDashboardPage.clickDivisiSideBar();
+        extentTest.log(LogStatus.PASS, "User click division sidebar");
+    }
+
+    @Then("User success move to division menu")
+    public void user_success_move_to_division_menu(){
+        extentTest.log(LogStatus.PASS, "User success move to division menu");
+    }
 
     @When("User click unit sidebar")
     public void user_click_unit_sidebar(){
@@ -50,14 +50,14 @@ public class DashboardTest {
         extentTest.log(LogStatus.PASS, "User success move to unit menu");
     }
 
-//    @When("User click client upliner sidebar")
-//    public void user_click_client_upliner_sidebar(){
-//        adminDashboardPage.clickClientUplinerSidebar();
-//        extentTest.log(LogStatus.PASS, "User click client upliner sidebar");
-//    }
-//
-//    @Then("User success move to client upliner menu")
-//    public void user_success_move_to_client_upliner_menu(){
-//        extentTest.log(LogStatus.PASS, "User success move to client upliner menu");
-//    }
+    @When("User click client upliner sidebar")
+    public void user_click_client_upliner_sidebar(){
+        adminDashboardPage.clickClientUplinerSidebar();
+        extentTest.log(LogStatus.PASS, "User click client upliner sidebar");
+    }
+
+    @Then("User success move to client upliner menu")
+    public void user_success_move_to_client_upliner_menu(){
+        extentTest.log(LogStatus.PASS, "User success move to client upliner menu");
+    }
 }

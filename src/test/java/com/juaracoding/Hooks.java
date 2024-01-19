@@ -2,6 +2,7 @@ package com.juaracoding;
 
 import com.juaracoding.drivers.DriverSingleton;
 import com.juaracoding.utils.TestCase;
+import com.juaracoding.utils.TestCaseClientUpliner;
 import com.juaracoding.utils.Utils;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -23,7 +24,7 @@ public class Hooks {
     public static void setUp(){
         DriverSingleton.getInstance("chrome");
         driver = DriverSingleton.getDriver();
-        TestCase[] test = TestCase.values();
+        TestCaseClientUpliner[] test = TestCaseClientUpliner.values();
         extentTest = reports.startTest(test[Utils.testCount].getTestCaseName());
         Utils.testCount++;
     }

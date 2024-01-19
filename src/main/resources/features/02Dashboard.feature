@@ -5,7 +5,7 @@ Feature: User Dashboard
 
 #    When User click division sidebar
 #    Then User success move to division menu
-    When User click unit sidebar
-    Then User success move to unit menu
-#    When User click client upliner sidebar
-#    Then User success move to client upliner menu
+#    When User click unit sidebar
+#    Then User success move to unit menu
+    When User click client upliner sidebar
+    Then User success move to client upliner menu

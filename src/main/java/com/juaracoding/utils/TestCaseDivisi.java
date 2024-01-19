@@ -1,10 +1,10 @@
 package com.juaracoding.utils;
 
-public enum TestCase {
+public enum TestCaseDivisi {
 
     T1("Input URL benar"),
     T2("Input valid Username dan Password"),
-    T3("User move to division menu"),
+    T3("User pindah ke menu divisi"),
     T4("Batal tambah divisi baru"),
     T5("Input divisi baru dengan jumlah karakter lebih dari 255"),
     T6("Input divisi baru benar"),
@@ -26,10 +26,9 @@ public enum TestCase {
     T23("Pindah ke halaman paling awal"),
     T24("Pindah ke halaman selanjutnya");
 
-
     private String testCaseName;
 
-    TestCase(String value) {
+    TestCaseDivisi(String value) {
         testCaseName = value;
     }
 

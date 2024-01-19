@@ -57,8 +57,22 @@ public class ClientUplinerPage {
     @FindBy(css =".css-4075ia")
     private WebElement buttonAddNewClientUpliner;
 
+    @FindBy(css = ".MuiButton-textWarning")
+    private WebElement resetSearchClientUpliner;
+
+    // Filter By Unit Element
+    @FindBy(css = ".feather-filter")
+    private WebElement filterByUnit;
+
+    @FindBy(id = "mui-component-select-job_departement_id")
+    private WebElement selectUnitFilter;
+
+    @FindBy(xpath = "//li[.='Air Asia']")
+    private WebElement selectFilterAirAsia;
+
     public void setFullNameUpliner(String fullNameUpliner){
-        this.inputNamaKaryawanUpliner.clear();
+        this.inputNamaKaryawanUpliner.sendKeys(Keys.chord(Keys.CONTROL + "A"));
+        this.inputNamaKaryawanUpliner.sendKeys(Keys.DELETE);
         this.inputNamaKaryawanUpliner.sendKeys(fullNameUpliner);
 
         getInputNamaKaryawanUpliner();
@@ -66,7 +80,8 @@ public class ClientUplinerPage {
     }
 
     public void setEmailUpliner(String emailUpliner){
-        this.inputEmailUpliner.clear();
+        this.inputEmailUpliner.sendKeys(Keys.chord(Keys.CONTROL + "A"));
+        this.inputEmailUpliner.sendKeys(Keys.DELETE);
         this.inputEmailUpliner.sendKeys(emailUpliner);
 
         getInputEmailUpliner();
@@ -78,7 +93,8 @@ public class ClientUplinerPage {
     }
 
     public void setPasswordUpliner(String passwordUpliner){
-        this.inputPasswordUpliner.clear();
+        this.inputPasswordUpliner.sendKeys(Keys.chord(Keys.CONTROL + "A"));
+        this.inputPasswordUpliner.sendKeys(Keys.DELETE);
         this.inputPasswordUpliner.sendKeys(passwordUpliner);
     }
 
@@ -95,7 +111,8 @@ public class ClientUplinerPage {
     }
 
     public void setJobDepartementUpliner(String jobDepartementUpliner){
-        this.inputJobDepartementUpliner.clear();
+        this.inputJobDepartementUpliner.sendKeys(Keys.chord(Keys.CONTROL + "A"));
+        this.inputJobDepartementUpliner.sendKeys(Keys.DELETE);
         this.inputJobDepartementUpliner.sendKeys(jobDepartementUpliner);
 
         DriverSingleton.delay(1);
@@ -161,6 +178,22 @@ public class ClientUplinerPage {
 
     public String getRandEmailKaryawanUpliner() {
         return randEmailKaryawanUpliner;
+    }
+
+    public void clickResetSearchClientUpliner(){
+        resetSearchClientUpliner.click();
+    }
+
+    public void clickFilterByUnit(){
+        filterByUnit.click();
+    }
+
+    public void clickSelectFilterUnit(){
+        selectUnitFilter.click();
+    }
+
+    public void clickSelectFilterAirAsia(){
+        selectFilterAirAsia.click();
     }
 }
 
