@@ -5,24 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfe1e2bf-75d2-47c8-944c-56d1a42f606d" name="Changes" comment="ADD: Divisi page with basic cucumber, READ TODO">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/pages/admin/AdminKehadiranPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/3_mb_images.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/tofu.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/tofu.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestNG/admin/AdminKehadiranTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestNG/staff/RegisterStaffTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/staff/RegisterStaffTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/Constant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/TestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/features/01Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/juaracoding/utils/01Login.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/features/099RegisterStaff.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/099RegisterStaff.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/juaracoding/staff/RegisterStaffTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juaracoding/staff/RegisterStaffTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$" userTempatePath="" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -66,13 +60,6 @@
           </list>
         </option>
       </RecentBranches>
-    </option>
-  </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="master" />
-      </list>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -174,6 +161,7 @@
       <workItem from="1704811781286" duration="1703000" />
       <workItem from="1705364001852" duration="5761000" />
       <workItem from="1705384240561" duration="6089000" />
+      <workItem from="1705642275282" duration="2048000" />
     </task>
     <task id="LOCAL-00001" summary="ADD: Divisi page with basic cucumber, READ TODO">
       <option name="closed" value="true" />

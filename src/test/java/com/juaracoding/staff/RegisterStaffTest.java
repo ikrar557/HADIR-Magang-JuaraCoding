@@ -37,7 +37,7 @@ public class RegisterStaffTest {
     // 1# Scenario : Input URL Salah
     @Given("Input URL Register Staff Admin yang salah")
     public void input_url_register_staff_admin_yang_salah(){
-        String invalidRegisterURL = "https://staging-hadir.ptkta.com/absen/registrar";
+        String invalidRegisterURL = "https://dev.dikahadir.com/absen/registrar";
         driver.get(invalidRegisterURL);
 
         extentTest.log(LogStatus.PASS, "Input URL Register Staff Admin yang salah");
@@ -52,7 +52,7 @@ public class RegisterStaffTest {
 
     @Then("Menampilkan Halaman Register yang salah atau 404")
     public void menampilkan_halaman_menampilkan_halaman_register_yang_salah_atau_404(){
-        Assert.assertEquals(driver.getCurrentUrl(), "https://staging-hadir.ptkta.com/absen/registrar");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://dev.dikahadir.com/absen/registrar");
 
         extentTest.log(LogStatus.PASS, "Menampilkan Halaman Register yang salah atau 404");
     }
@@ -60,7 +60,7 @@ public class RegisterStaffTest {
     // 2# Scenario : Input URL Benar
     @Given("Input URL Register Staff Admin yang benar")
     public void input_url_register_staff_admin_yang_benar(){
-        String validRegisterURL = "https://staging-hadir.ptkta.com/absen/register";
+        String validRegisterURL = "https://dev.dikahadir.com/absen/register";
         driver.get(validRegisterURL);
 
         extentTest.log(LogStatus.PASS, "Input URL Register Staff Admin yang benar");
@@ -68,7 +68,7 @@ public class RegisterStaffTest {
 
     @Then("Menampilkan Halaman Registrasi")
     public void menampilkan_halaman_registrasi(){
-        Assert.assertEquals(driver.getCurrentUrl(), "https://staging-hadir.ptkta.com/absen/register");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://dev.dikahadir.com/absen/register");
 
         extentTest.log(LogStatus.PASS, "Menampilkan Halaman Registrasi");
     }
@@ -77,14 +77,14 @@ public class RegisterStaffTest {
     @Given("Pergi ke halaman registrasi")
     public void pergi_ke_halaman_registrasi(){
         driver.navigate().refresh();
-        Assert.assertEquals(driver.getCurrentUrl(), "https://staging-hadir.ptkta.com/absen/register");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://dev.dikahadir.com/absen/register");
 
         extentTest.log(LogStatus.PASS, "Pergi ke halaman registrasi");
     }
 
     @When("Masukan NIK")
     public void masukan_nik(){
-        staffRegisterPage.setNikStaff("JC-SQA-RPA 12");
+        staffRegisterPage.setNikStaff("D8210516");
         extentTest.log(LogStatus.PASS, "Masukan NIK");
     }
 
@@ -130,7 +130,7 @@ public class RegisterStaffTest {
     // 4# Scenario : Input valid NIK, Nama Lengkap, Password, Upload Selfie, Email yang sudah terdaftar
     @And("Masukan Email yang sudah terdaftar")
     public void masukan_email_yang_sudah_terdaftar(){
-        staffRegisterPage.setEmailStaff("registered@example.com");
+        staffRegisterPage.setEmailStaff("admin@hadir.com");
         extentTest.log(LogStatus.PASS, "Masukan Email yang sudah terdaftar");
     }
 
@@ -156,7 +156,7 @@ public class RegisterStaffTest {
 
     @Then("User gagal daftar, muncul peringatan file lebih dari 2 MB")
     public void user_gagal_daftar_muncul_peringatan_file_lebih_dari_2_mb(){
-        DriverSingleton.delay(2);
+        DriverSingleton.delay(5);
         Assert.assertEquals(staffRegisterPage.getTextAlertMessage(), "*File harus dibawah 2 MB");
 
         extentTest.log(LogStatus.PASS, "User gagal daftar, muncul peringata file lebih dari 2 MB");
@@ -239,19 +239,113 @@ public class RegisterStaffTest {
     public void user_gagal_daftar_muncul_peringatan_upload_selfie_kosong(){
         DriverSingleton.delay(1);
         Assert.assertEquals(staffRegisterPage.getImageValidationMessage(), "Please select a file.");
+        extentTest.log(LogStatus.PASS, "User gagal daftar, muncul peringatan Upload Selfie kosong");
     }
+
     // 12# Scenario : Input valid NIK, Email , Password , Upload Selfie, Nama Lengkap hanya angka saja
     @And("Masukan Nama Lengkap hanya angka")
     public void masukan_nama_lengkap_hanya_angka(){
-        staffRegisterPage.setNikStaff("123456790");
+        staffRegisterPage.setFullNameStaff("123456790");
         extentTest.log(LogStatus.PASS, "Masukan Nama Lengkap hanya angka");
     }
 
-    // 13# Scenario : Input valid NIK , Nama Lengkap, Email , Password , Upload Selfie
+    @Then("User gagal daftar, muncul peringatan nama tidak boleh angka saja")
+    public void user_gagal_daftar_muncul_peringatan_nama_tidak_boleh_angka_saja(){
+        DriverSingleton.delay(5);
+        Assert.assertNotEquals(staffRegisterPage.getTextAlertMessage(), "berhasil register, silahkan menunggu di approve oleh admin");
+        extentTest.log(LogStatus.PASS, "User gagal daftar, muncul peringatan nama tidak boleh angka saja");
+    }
+
+    // 13# Scenario : Input Valid NIK, Nama Lengkap, Password, Upload Selfie, Email Di isi dengan Karakter Special
+    @And("Masukan Email dengan karakter special")
+    public void masukan_email_dengan_karakter_special(){
+        staffRegisterPage.setEmailStaff("!@#$%^&*");
+        extentTest.log(LogStatus.PASS, "Masukan Email dengan karakter special");
+    }
+
+    @Then("User Gagal Daftar, muncul peringatan penggunaan karakter special")
+    public void User_Gagal_Daftar_muncul_peringatan_penggunaan_karakter_special(){
+        Assert.assertEquals(staffRegisterPage.getEmailValidationMessage(), "A part following '@' should not contain the symbol '#'.");
+        extentTest.log(LogStatus.PASS, "User Gagal Daftar, muncul peringatan penggunaan karakter special");
+    }
+
+    // 14# Scenario : Input Valid NIK, Nama Lengkap, Password, Upload Selfie, Email Di isi dengan Angka saja
+    @And("Masukan Email Angka saja")
+    public void Masukan_Email_Angka_saja(){
+        staffRegisterPage.setEmailStaff("1234567890");
+        extentTest.log(LogStatus.PASS, "Masukan Email Angka saja");
+    }
+
+    @Then("User Gagal Daftar, muncul peringatan penggunaan simbol add")
+    public void user_gagal_daftar_muncul_peringatan_penggunaan_simbol_add(){
+        Assert.assertEquals(staffRegisterPage.getEmailValidationMessage(), "Please include an '@' in the email address. '1234567890' is missing an '@'.");
+        extentTest.log(LogStatus.PASS, "User Gagal Daftar, muncul peringatan penggunaan simbol add");
+    }
+
+    // 15# Scenario : Input Valid NIK, Nama Lengkap, Password, Upload Selfie, Email Di isi Tanpa Domain
+    @And("Masukan Email Tanpa Domain")
+    public void Masukan_Email_Tanpa_Domain(){
+        staffRegisterPage.setEmailStaff("test@hehe");
+        extentTest.log(LogStatus.PASS, "Masukan Email Tanpa Domain");
+    }
+
+    @Then("User Gagal Daftar, muncul peringatan dibutuhkan domain")
+    public void user_gagal_daftar_muncul_peringatan_dibutuhkan_domain(){
+        DriverSingleton.delay(5);
+        Assert.assertNotEquals(staffRegisterPage.getTextAlertMessage(), "berhasil register, silahkan menunggu di approve oleh admin");
+        extentTest.log(LogStatus.PASS, "User Gagal Daftar, muncul peringatan dibutuhkan domain");
+    }
+
+    // 16# Scenario : Input Valid NIK, Email, Password, Upload Selfie, Nama Lengkap hanya Karakter Special
+    @And("Masukan Nama Lengkap dengan karakter special")
+    public void masukan_nama_lengkap_dengan_karakter_special(){
+        staffRegisterPage.setFullNameStaff("!@#$%^&*");
+        extentTest.log(LogStatus.PASS, "Masukan Nama Lengkap dengan karakter special");
+    }
+
+    @Then("User Gagal Daftar, muncul peringatan penggunaan karakter special pada nama")
+    public void user_gagal_daftar_muncul_peringatan_penggunaan_karakter_special_pada_nama(){
+        DriverSingleton.delay(5);
+        Assert.assertEquals(staffRegisterPage.getTextAlertMessage(), "berhasil register, silahkan menunggu di approve oleh admin");
+        extentTest.log(LogStatus.PASS, "User Gagal Daftar, muncul peringatan penggunaan karakter special pada nama");
+    }
+
+
+    // 17# Scenario : Input Valid Nama Lengkap, Email, Password, Upload Selfie, Input NIK Dengan Email
+    @When("Masukan NIK Dengan Email")
+    public void Masukan_NIK_Dengan_Email(){
+        staffRegisterPage.setNikStaff("Test@Example.com");
+        extentTest.log(LogStatus.PASS, "Masukan NIK Dengan Email");
+    }
+
+    @Then("User Gagal Daftar, muncul peringatan NIK Anda tidak ditemukan")
+    public void user_gagal_daftar_muncul_peringatan_nik_anda_tidak_ditemukan(){
+        DriverSingleton.delay(5);
+        Assert.assertEquals(staffRegisterPage.getTextAlertMessage(), "NIK Anda tidak ditemukan");
+        extentTest.log(LogStatus.PASS, "User Gagal Daftar, muncul peringatan NIK Anda tidak ditemukan");
+    }
+
+
+    // 18# Scenario : Input Valid, Nama Lengkap, Email, Password, Upload Selfie, NIK menggunakan Karakter Special
+    @When("Masukan NIK dengan karakter special")
+    public void Masukan_NIK_dengan_karakter_special(){
+        staffRegisterPage.setNikStaff("!@#$%^&*");
+        extentTest.log(LogStatus.PASS, "Masukan NIK dengan karakter special");
+    }
+
+    // 19# Scenario : Input Valid, Nama Lengkap, Email , Password, Upload Selfie, NIK menggunakan Nama Lengkap
+    @When("Masukan NIK Menggunakan Nama Lengkap")
+    public void Masukan_NIK_Menggunakan_Nama_Lengkap(){
+        staffRegisterPage.setNikStaff("Elanda Dwi");
+        extentTest.log(LogStatus.PASS, "Masukan NIK Menggunakan Nama Lengkap");
+    }
+
+
+    // 20# Scenario : Input valid NIK , Nama Lengkap, Email , Password , Upload Selfie
     @Then("User berhasil terdaftar")
     public void user_berhasil_terdaftar(){
-        DriverSingleton.delay(1);
-        Assert.assertEquals(staffRegisterPage.getTextAlertMessage(), "berhasil register, silahkan menunggu di approve oleh admin");
+        DriverSingleton.delay(5);
+        Assert.assertEquals(staffRegisterPage.getTextAlertMessage(), "Akun sudah terdaftar di sistem dan belum terverifikasi");
 
         extentTest.log(LogStatus.PASS, "User berhasil terdaftar");
     }

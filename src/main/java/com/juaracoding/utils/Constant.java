@@ -15,7 +15,7 @@ public class Constant {
     }
     public final static long TIMEOUT = 10;
 
-    public final static String STAFF_URL = "https://staging-hadir.ptkta.com/absen/login";
+    public final static String STAFF_URL = "https://dev.dikahadir.com/absen/login";
 
     public final static String ADMIN_URL = "https://staging-hadir.ptkta.com/dashboards/dashboard";
 
